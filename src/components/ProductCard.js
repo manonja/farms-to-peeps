@@ -7,7 +7,7 @@ class ProductCard extends Component {
             <div>
                 <img className='img' src={image} alt={name} />
                 <p>{name}</p><span>{farm}</span>
-                <p>{price}</p>
+                <p>£{price}</p>
                 <p>{quantity}</p>
             </div>
         )

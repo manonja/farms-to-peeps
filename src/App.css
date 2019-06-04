@@ -31,3 +31,26 @@
     transform: rotate(360deg);
   }
 }
+
+.img {
+  position: relative;
+  padding: 1%;
+  float: left;
+  width: auto;
+  max-width:  300px;
+  height: auto;
+  max-height: 300px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.productList {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+  
+}
