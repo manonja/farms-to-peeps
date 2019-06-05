@@ -5,7 +5,9 @@ import { getAll, getByCategory } from './data/produces';
 
 
 import ProductList from './components/ProductList'
-import Navbar from './pages/Navbar';
+import NavbarComponent from './pages/NavbarComponent';
+import HomePage from './pages/HomePage';
+
 
 
 class App extends Component {
@@ -31,7 +33,8 @@ class App extends Component {
     return ( 
       <div className="app-container">
       <header className="App-header">
-        <Navbar />
+        <NavbarComponent />
+        <HomePage />
 
         {/* <ProductList 
           produces= {produces} 
