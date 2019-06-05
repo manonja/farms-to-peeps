@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 class NavbarComponent extends Component {
     render() { 
         return ( 
-            <nav className="navbar navbar-expand-lg navbar-light sticky-top">
+            <nav className="navbar navbar-expand-lg navbar-light sticky-top scrolling-navbar">
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                 aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
