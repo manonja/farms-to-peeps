@@ -2,22 +2,14 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+#intro {
+    height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
+
 
 .App-link {
   color: #61dafb;
@@ -55,6 +47,7 @@
 }
 
   .navbar {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +56,7 @@
     background-color: whitesmoke;
     font-size: 20px;
     width: 100%;
-    height: 90px;
+    height: 70px;
     z-index: 1;
   }
 
@@ -72,7 +65,7 @@
     justify-content: right;
     list-style: none;
     margin-right: 5%;
-  }
+  } 
 
   .logo {
     flex: 1 1 auto;
@@ -81,11 +74,11 @@
     letter-spacing: 1px;
     font-weight: bold;
     font-size: 35px;
-  }
+  } 
 
     a {
       margin: 10px;
-      color: #000;
+      color: #000 !important;
       text-decoration: none;
       text-transform: uppercase;
     }
@@ -93,5 +86,16 @@
     a:hover {
       color: #000;
     }
+
+    #intro {
+      background: url("https://images.unsplash.com/photo-1498579397066-22750a3cb424?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      padding: 8%;
+  }
+
+
 
   
