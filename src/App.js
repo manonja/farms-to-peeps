@@ -1,12 +1,10 @@
 import React, {Component} from 'react'
 import './App.css';
 
-import { getAll, getByCategory } from './data/produces';
+import { getAll } from './data/produces';
 
-
-import ProductList from './components/ProductList'
-import NavbarComponent from './pages/NavbarComponent';
-import HomePage from './pages/HomePage';
+import NavBar from './components/NavBar';
+import HomePage from './containers/HomePage';
 
 
 
@@ -33,7 +31,7 @@ class App extends Component {
     return ( 
       <div className="app-container">
       <header className="App-header">
-        <NavbarComponent />
+        <NavBar />
         <HomePage />
 
         {/* <ProductList 

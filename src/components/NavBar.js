@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 
 
-class NavbarComponent extends Component {
+class NavBar extends Component {
     render() { 
         return ( 
             <nav className="navbar navbar-expand-lg navbar-light sticky-top scrolling-navbar">
@@ -25,17 +25,13 @@ class NavbarComponent extends Component {
                     <ul className='nav form-inline my-2 my-lg-0 ml-auto '>
                         <li><a  href='#about'>About</a></li>
                         <li><a href='#login'>Login</a></li>
-                        <button className="btn btn-outline-dark btn-lg my-2 my-sm-0 ml-3" href='#get-started'>GET STARTED</button>
+                        <button className="btn btn-outline-dark btn-lg my-2 my-sm-0 ml-3" href='#get-started'>REGISTER</button>
 
                     </ul>
-                    {/* <button  className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3" type="submit">Dashboard</button>
-                    <button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3" type="submit">Logout</button> */}
-                    
-    
                 </div>
             </nav>
          );
     }
 }
  
-export default NavbarComponent;
+export default NavBar;
