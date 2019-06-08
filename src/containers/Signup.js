@@ -11,7 +11,8 @@ class Signup extends Component {
         last_name: '',
         address: '',
         phone: '',
-        password: ''    
+        password: '', 
+        user_type: '' 
     }
 
     handleSubmit = (e) => {
@@ -93,9 +94,17 @@ class Signup extends Component {
                         className="form-control mb-4" 
                         placeholder="Password" 
                     />
+
+                    <fieldset>
+                        <legend>Check the box below if you are a farmer</legend>
+                        <div>
+                            <input type="checkbox" id="user_type" name="user_type" value="farmer"/>
+                            <label htmlFor="user_type">I am a farmer!</label>
+                        </div>
+                    </fieldset>
                 
     
-                    <Link to='/signin'><button onClick={(e) => this.handleSubmit(e)} className="btn btn-info btn-block my-4" type="submit">Sign me up!</button></Link>
+                    <Link to='/signin'><button className="btn btn-block btn-outline-orange btn-lg" onClick={(e) => this.handleSubmit(e)}  type="submit">Sign me up!</button></Link>
     
                     </form>
             </div>

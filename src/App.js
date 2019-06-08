@@ -26,7 +26,7 @@ class App extends Component {
     this.setState({email}, () => {
       if (this.state.userType === 'customer') {
         this.props.history.push('/products')
-      } else if ((this.state.userType === 'customer')) {
+      } else if ((this.state.userType === 'farmer')) {
         this.props.history.push('/product-form')
       } else {
         this.props.history.push('/')
