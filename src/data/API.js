@@ -6,20 +6,20 @@ class API {
     static basketUrl = API.baseUrl + '/basket'
     static productsUrl = API.baseUrl + '/products'
 
-    static signin (customer) {
+    static signin (user) {
         return fetch(this.signinUrl, {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(customer)
+            body: JSON.stringify(user)
         }).then(resp => resp.json())
     
        }
     
-       static signup (customer) {
+       static signup (user) {
         return fetch(this.signupUrl, {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(customer)
+            body: JSON.stringify(user)
         }).then(resp => resp.json())
        }
     

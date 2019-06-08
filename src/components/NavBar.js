@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-
-
+// import {Link} from 'react-router-dom'
 
 class NavBar extends Component {
     render() { 
@@ -24,7 +23,6 @@ class NavBar extends Component {
 
                     <ul className='nav form-inline my-2 my-lg-0 ml-auto '>
                         <li><a  href='#about'>About</a></li>
-                        <li><a href='#login'>Login</a></li>
                         <button className="btn btn-outline-dark btn-lg my-2 my-sm-0 ml-3" href='#get-started'>REGISTER</button>
 
                     </ul>

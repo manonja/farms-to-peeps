@@ -1,43 +1,72 @@
 import React, {Component} from 'react'
 import './App.css';
 
-import { getAll } from './data/produces';
+import { Route, Switch, withRouter } from 'react-router-dom'
 
-import NavBar from './components/NavBar';
+import API from './data/API'
+
 import HomePage from './containers/HomePage';
+// import NavBar from './components/NavBar'
+import Signin from './containers/Signin'
+import Signup from './containers/Signup'
+// import CustomerBasket from './containers/CustomerBasket'
 
 
 
 class App extends Component {
-  state = { 
-    produces: [],
-    selectedProduct: false, 
-   }
+  
+  state = {
+    email: '',
+    first_name: '',
+    userType: '' //farmer or customer
+  }
 
-   getProduces = () => {
-     getAll()
-      .then(produces => this.setState({produces}))
-    
-   }
+  signin = (email, token) => {
+    localStorage.setItem('token', token)
+    this.setState({email}, () => {
+      if (this.state.userType === 'customer') {
+        this.props.history.push('/products')
+      } else if ((this.state.userType === 'customer')) {
+        this.props.history.push('/product-form')
+      } else {
+        this.props.history.push('/')
+      }
+    })
+  }
 
-   componentDidMount() {
-     this.getProduces()
-   }
+  signup = (email) => {
+      this.setState({email})
+    }
 
+  signout = () => {
+      this.setState({email: ''})
+      localStorage.removeItem('token')
+      this.props.history.push('/')
+    }
+
+  componentDidMount() {
+        API.validate()
+          .then(data => {
+              if(data.error){
+                  this.props.history.push('/')
+              }
+              else {
+                  this.signin(data.email, localStorage.getItem('token'))
+              }
+          })
+    }
 
   render() { 
-    const {produces} = this.state
-
+    const {signin, signup} = this
     return ( 
       <div className="app-container">
       <header className="App-header">
-        <NavBar />
-        <HomePage />
-
-        {/* <ProductList 
-          produces= {produces} 
-        /> */}
-       
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/signin' component={props => <Signin {...props} signin={signin}/>} />
+          <Route exact path='/signup' component={props => <Signup {...props} signup={signup}/>} />
+          <Route component={() => <h1>Page not found.</h1>} />
+        </Switch>     
       </header>
     </div>
      );
@@ -45,4 +74,4 @@ class App extends Component {
 }
 
 
-export default App
+export default withRouter(App)
