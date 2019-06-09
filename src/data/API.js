@@ -6,6 +6,7 @@ class API {
     static basketUrl = API.baseUrl + '/basket'
     static productsUrl = API.baseUrl + '/products'
 
+
     static signin (user) {
         return fetch(this.signinUrl, {
             method: "POST",
@@ -28,18 +29,22 @@ class API {
            return fetch(this.validateUrl, {
             headers: { Authorization: token }
         }).then(resp => resp.json())
-       }
-
-    //    static getAllProducts () {
-    //        return fetch(this.productsUrl)
-    //         .then(resp => resp.json())
-    //    }
+    }
     
        static getBasket () {
-           return fetch(this.basketUrl, {
+           return fetch(this.productsUrl, {
                headers: {Authorization: localStorage.getItem('token')}
            }).then(resp => resp.json())
        }
+
+       static createProduct (product) {
+        return fetch(this.productsUrl, {
+         method: "POST",
+         headers: { "Content-Type": "application/json",
+         Authorization: localStorage.getItem('token') },
+         body: JSON.stringify(product)
+       }).then(resp => resp.json())
+     }
     
 
 }
