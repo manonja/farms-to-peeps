@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CustomerBasket extends Component {
+class Basket extends Component {
     state = {  }
     render() { 
         return ( 
@@ -9,4 +9,4 @@ class CustomerBasket extends Component {
     }
 }
  
-export default CustomerBasket;
+export default Basket;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class NavBar extends Component {
     render() { 
@@ -22,9 +22,10 @@ class NavBar extends Component {
                     </ul>
 
                     <ul className='nav form-inline my-2 my-lg-0 ml-auto '>
-                        <li><a  href='#about'>About</a></li>
-                        <button className="btn btn-outline-dark btn-lg my-2 my-sm-0 ml-3" href='#get-started'>REGISTER</button>
-
+                        <li><a  href='#signin'>Login</a></li>
+                        {/* <button onClick={this.props.signout} className="btn btn-outline-green btn-md my-2 my-sm-0 ml-3" type="submit">Logout</button> */}
+                        <Link to='/signup'><button className="btn btn-outline-dark btn-lg my-2 my-sm-0 ml-3">REGISTER</button></Link>
+                        <i className="fas fa-shopping-basket"></i>
                     </ul>
                 </div>
             </nav>

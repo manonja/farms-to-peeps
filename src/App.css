@@ -37,8 +37,17 @@ body,
   background-size: cover;
 }
 
-.productList {
-    margin-top: 80px;
+#productCard {
+  margin-top: 5%;
+  /* width: auto;
+  max-width:  800px;
+  height: auto;
+  max-height: 800px; */
+
+}
+
+.productCollection {
+    margin-top: 5%;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;

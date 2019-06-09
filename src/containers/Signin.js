@@ -5,7 +5,8 @@ import API from '../data/API'
 class Signin extends Component {
     state = {
         email: '',
-        password: ''
+        password: '',
+        user_type: ''
     }
 
     handleSubmit = (e) => {
@@ -32,10 +33,11 @@ class Signin extends Component {
         return ( 
 // <!-- Default form login -->
             <div>
-                <h1>RETURNING USER</h1>
                 <form className="text-center border border-light p-5">
+                <h3>RETURNING USER</h3>
+
                     
-                    <p className="h4 mb-4">Sign in</p>
+                    <h2 className="h4 mb-4">Sign in</h2>
                     <input 
                         name='email' 
                         id="defaultLoginFormEmail" 
@@ -53,13 +55,23 @@ class Signin extends Component {
                         className="form-control mb-4" 
                         placeholder="Password" 
                     />
-
-                    <button onClick={(e) => this.handleSubmit(e)}> Sign me in! </button>
+                    <fieldset>
+                        <legend>Check the box below if you are a farmer</legend>
+                        <div>
+                            <input type="checkbox" id="user_type" name="user_type" value="farmer"/>
+                            <label htmlFor="user_type">I am a farmer!</label>
+                        </div>
+                    </fieldset>
+                    <button className="btn btn-outline-orange btn-lg " onClick={(e) => this.handleSubmit(e)}> Sign me in! </button>
                 </form>
+                <form className="text-center border border-light p-5">
 
-                <h1>NEW USER</h1>
-                <h3>By creating an account with us, you will be able to move through the checkout process faster and view your orders.</h3>
-                <Link to='/signup'><button>Create an account</button></Link>
+
+                    <h3>NEW USER</h3>
+                    <h2 className="h4 mb-4">Register</h2>
+                    <h5>By creating an account with us, you will be able to move through the checkout process faster and view your orders.</h5>
+                    <Link to='/signup'><button className="btn btn-outline-orange btn-lg ">Create an account</button></Link>
+                </form>
             </div>
             );
     }

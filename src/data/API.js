@@ -29,6 +29,11 @@ class API {
             headers: { Authorization: token }
         }).then(resp => resp.json())
        }
+
+    //    static getAllProducts () {
+    //        return fetch(this.productsUrl)
+    //         .then(resp => resp.json())
+    //    }
     
        static getBasket () {
            return fetch(this.basketUrl, {
