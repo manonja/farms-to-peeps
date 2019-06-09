@@ -25,7 +25,7 @@ class NavBar extends Component {
                         <li><a  href='#signin'>Login</a></li>
                         {/* <button onClick={this.props.signout} className="btn btn-outline-green btn-md my-2 my-sm-0 ml-3" type="submit">Logout</button> */}
                         <Link to='/signup'><button className="btn btn-outline-dark btn-lg my-2 my-sm-0 ml-3">REGISTER</button></Link>
-                        <i className="fas fa-shopping-basket"></i>
+                        <Link to='/basket'><i className="fas fa-shopping-basket"></i></Link>
                     </ul>
                 </div>
             </nav>

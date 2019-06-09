@@ -10,6 +10,8 @@ import Signin from './containers/Signin'
 import Signup from './containers/Signup'
 // import Products from './containers/Products'
 import CustomerContainer from './containers/CustomerContainer';
+import FarmerContainer from './containers/FarmerContainer';
+
 
 // import CustomerBasket from './containers/CustomerBasket'
 
@@ -30,7 +32,7 @@ class App extends Component {
       } else if ((this.state.userType === 'farmer')) {
         this.props.history.push('/products')
       } else {
-        this.props.history.push('/products')
+        this.props.history.push('/farmers')
       }
     })
   }
@@ -68,6 +70,7 @@ class App extends Component {
           <Route exact path='/signin' component={props => <Signin {...props} signin={signin}/>} />
           <Route exact path='/signup' component={props => <Signup {...props} signup={signup}/>} />
           <Route exact path='/products' component={props => <CustomerContainer {...props} email={email} first_name={first_name} userType={userType} signout={signout}/>}/>
+          <Route exact path='/farmers' component={props => <FarmerContainer {...props} email={email} first_name={first_name} userType={userType} signout={signout}/>}/>
           <Route component={() => <h1>Page not found.</h1>} />
         </Switch>     
       </header>

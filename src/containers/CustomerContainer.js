@@ -29,6 +29,10 @@ class CustomerContainer extends Component {
         this.setState({basket: [...this.state.basket, newProduct]})
     }
 
+    removeFromBasket = (product) => {
+        this.setState({basket: [...this.state.basket.filter(p => p.id !== product.id)]})
+    }
+
 
     render() {  
         const {email, basket, products} = this.state
@@ -40,7 +44,9 @@ class CustomerContainer extends Component {
                     addToBasket={this.addToBasket}
                 />
                 <Basket
-                    
+                    email={email}
+                    basket={basket}
+                    removeFromBasket={this.removeFromBasket}
                 />
            </div>
          );
