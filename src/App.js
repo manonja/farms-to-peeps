@@ -8,7 +8,6 @@ import API from './data/API'
 import HomePage from './containers/HomePage';
 import Signin from './containers/Signin'
 import Signup from './containers/Signup'
-// import Products from './containers/Products'
 import CustomerContainer from './containers/CustomerContainer';
 import FarmerContainer from './containers/FarmerContainer';
 
@@ -26,6 +25,7 @@ class App extends Component {
 
   signin = (email, token) => {
     localStorage.setItem('token', token)
+
     this.setState({email}, () => {
       if (this.state.userType === 'customer') {
         this.props.history.push('/products')

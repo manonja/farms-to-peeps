@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 import ProductCard from './ProductCard'
 class ProductCollection extends Component {
-    state = {  }
-   
+  
         render() {
             const {products} = this.props
             const product = products.map(product => (
