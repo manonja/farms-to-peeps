@@ -6,11 +6,12 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 import API from './data/API'
 
 import HomePage from './containers/HomePage';
-// import NavBar from './components/NavBar'
 import Signin from './containers/Signin'
 import Signup from './containers/Signup'
-// import CustomerBasket from './containers/CustomerBasket'
+// import Products from './containers/Products'
+import CustomerContainer from './containers/CustomerContainer';
 
+// import CustomerBasket from './containers/CustomerBasket'
 
 
 class App extends Component {
@@ -27,9 +28,9 @@ class App extends Component {
       if (this.state.userType === 'customer') {
         this.props.history.push('/products')
       } else if ((this.state.userType === 'farmer')) {
-        this.props.history.push('/product-form')
+        this.props.history.push('/products')
       } else {
-        this.props.history.push('/')
+        this.props.history.push('/products')
       }
     })
   }
@@ -57,7 +58,8 @@ class App extends Component {
     }
 
   render() { 
-    const {signin, signup} = this
+    const {signin, signup, signout} = this
+    const {email, first_name, userType} = this.state
     return ( 
       <div className="app-container">
       <header className="App-header">
@@ -65,6 +67,7 @@ class App extends Component {
           <Route exact path='/' component={HomePage} />
           <Route exact path='/signin' component={props => <Signin {...props} signin={signin}/>} />
           <Route exact path='/signup' component={props => <Signup {...props} signup={signup}/>} />
+          <Route exact path='/products' component={props => <CustomerContainer {...props} email={email} first_name={first_name} userType={userType} signout={signout}/>}/>
           <Route component={() => <h1>Page not found.</h1>} />
         </Switch>     
       </header>
