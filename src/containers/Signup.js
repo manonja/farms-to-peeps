@@ -25,9 +25,7 @@ class Signup extends Component {
                 }
                 else {
                     // user is authentificated!
-                    this.state.farmer_id 
-                        ? this.props.signup(this.state.email, this.state.farmer_id) 
-                        : this.props.signup(this.state.email, this.state.customer_id)
+                    this.props.signup(this.state.email, this.state.user_type, this.state.first_name) 
                     this.props.history.push('/signin')
                 }
             })

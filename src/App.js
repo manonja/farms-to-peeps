@@ -19,16 +19,17 @@ class App extends Component {
   
   state = {
     email: '',
-    first_name: ''//farmer or customer
+    first_name: '',
+    user_type: ''
   }
 
   signin = (email, token) => {
     localStorage.setItem('token', token)
 
     this.setState({email}, () => {
-      if (this.state.userType === 'customer') {
+      if (this.state.user_type === 'customer') {
         this.props.history.push('/products')
-      } else if ((this.state.userType === 'farmer')) {
+      } else if ((this.state.user_type === 'farmer')) {
         this.props.history.push('/farmers')
       } else {
         this.props.history.push('/')
@@ -36,8 +37,8 @@ class App extends Component {
     })
   }
 
-  signup = (email) => {
-      this.setState({email})
+  signup = (email, user_type, first_name) => {
+      this.setState({email, user_type, first_name})
     }
 
   signout = () => {
