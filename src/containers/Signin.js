@@ -14,12 +14,12 @@ class Signin extends Component {
         API.signin(this.state)
             .then(data => {
                 if (data.error){
-                    alert("not working!", console.log(data.error))
+                    alert("not working!")
                 }
                 else {
                     // user is authentificated!
                     this.props.signin(this.state.email, data.token)
-                    // this.props.history.push('/memes')
+                    // this.props.history.push('/products')
                 }
             })
     }
@@ -28,6 +28,8 @@ class Signin extends Component {
         e.preventDefault()
         this.setState({ [e.target.name]: e.target.value})
     }
+
+
 
     render() { 
         return ( 
@@ -55,13 +57,7 @@ class Signin extends Component {
                         className="form-control mb-4" 
                         placeholder="Password" 
                     />
-                    <fieldset>
-                        <legend>Check the box below if you are a farmer</legend>
-                        <div>
-                            <input type="checkbox" id="user_type" name="user_type" value="farmer"/>
-                            <label htmlFor="user_type">I am a farmer!</label>
-                        </div>
-                    </fieldset>
+                 
                     <button className="btn btn-outline-orange btn-lg " onClick={(e) => this.handleSubmit(e)}> Sign me in! </button>
                 </form>
                 <form className="text-center border border-light p-5">

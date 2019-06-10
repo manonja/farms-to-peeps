@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 
 import Basket from '../customerComponents/Basket'
 import ProductCollection from '../customerComponents/ProductCollection';
-import NavBar from '../components/NavBar'
+import NavBarLoggedIn from '../components/NavBarLoggedIn'
 
 
 class CustomerContainer extends Component {
@@ -38,7 +38,7 @@ class CustomerContainer extends Component {
         const {email, basket, products} = this.state
         return ( 
            <div>
-               <NavBar signout={this.props.signout}/>
+               <NavBarLoggedIn signout={this.props.signout}/>
                <ProductCollection 
                     products={products}
                     addToBasket={this.addToBasket}
