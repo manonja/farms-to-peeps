@@ -6,6 +6,7 @@ import ProductForm from '../farmerComponents/ProductForm'
 import ProductCollection from '../farmerComponents/ProductCollection'
 
 import API from '../data/API'
+import NavBarLoggedIn from '../components/NavBarLoggedIn';
 
 
 class FarmerContainer extends Component {
@@ -29,6 +30,7 @@ class FarmerContainer extends Component {
     render() { 
         return ( 
             <div>
+                <NavBarLoggedIn signout={this.props.signout}/>
                 <ProductForm />
                 <ProductCollection
                     products={this.state.products}

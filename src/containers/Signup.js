@@ -12,7 +12,7 @@ class Signup extends Component {
         address: '',
         phone: '',
         password: '', 
-        user_type: '' 
+        user_type: ''
     }
 
     handleSubmit = (e) => {
@@ -25,7 +25,9 @@ class Signup extends Component {
                 }
                 else {
                     // user is authentificated!
-                    this.props.signup(this.state.email)
+                    this.state.farmer_id 
+                        ? this.props.signup(this.state.email, this.state.farmer_id) 
+                        : this.props.signup(this.state.email, this.state.customer_id)
                     this.props.history.push('/signin')
                 }
             })
@@ -34,6 +36,12 @@ class Signup extends Component {
     handleChange = e => {
         e.preventDefault()
         this.setState({ [e.target.name]: e.target.value})
+    }
+
+    handleUserType = e => {
+        e.preventDefault()
+        this.setState({user_type: e.target.value}) 
+        // I send this to the backend       
     }
 
     render() {
@@ -96,10 +104,13 @@ class Signup extends Component {
                     />
 
                     <fieldset>
-                        <legend>Check the box below if you are a farmer</legend>
+                        <legend>Choose your people!</legend>
                         <div>
-                            <input type="checkbox" id="user_type" name="user_type" value="farmer"/>
-                            <label htmlFor="user_type">I am a farmer!</label>
+                            <select onChange={this.handleUserType} value={this.state.value} >
+                                <option value="farmer">I am a farmer</option>
+                                <option value="customer">I am a peep</option>
+                    </select>
+
                         </div>
                     </fieldset>
                 

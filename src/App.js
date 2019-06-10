@@ -19,8 +19,7 @@ class App extends Component {
   
   state = {
     email: '',
-    first_name: '',
-    userType: '' //farmer or customer
+    first_name: ''//farmer or customer
   }
 
   signin = (email, token) => {
@@ -30,9 +29,9 @@ class App extends Component {
       if (this.state.userType === 'customer') {
         this.props.history.push('/products')
       } else if ((this.state.userType === 'farmer')) {
-        this.props.history.push('/products')
-      } else {
         this.props.history.push('/farmers')
+      } else {
+        this.props.history.push('/')
       }
     })
   }

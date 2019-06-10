@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 import {Link} from 'react-router-dom'
 
-class NavBar extends Component {
+class NavBarLoggedIn extends Component {
+    state = {
+        isLoggedIn: true
+    }
+
+  
     render() { 
         return ( 
             <nav className="navbar navbar-expand-lg navbar-light sticky-top scrolling-navbar">
@@ -21,8 +26,8 @@ class NavBar extends Component {
                         </li>
                     </ul>
                     <ul className='nav form-inline my-2 my-lg-0 ml-auto '>
-                        <Link to='/signin'><li>Login</li></Link>
-                        <Link to='/signup'><button className="btn btn-outline-dark btn-lg my-2 my-sm-0 ml-3">REGISTER</button></Link>
+                        <button onClick={this.props.signout} className="btn btn-outline-green btn-md my-2 my-sm-0 ml-3" type="submit">Logout</button>
+                        <Link to='/basket'><i className="fas fa-shopping-basket"></i></Link>
                     </ul>
                 </div>
             </nav>
@@ -30,4 +35,4 @@ class NavBar extends Component {
     }
 }
  
-export default NavBar;
+export default NavBarLoggedIn;
