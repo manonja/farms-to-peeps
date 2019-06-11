@@ -30,9 +30,7 @@ class App extends Component {
     localStorage.setItem('token', token)
     this.setState({email, current_user}, async () => {
       await this.defUserType()
-
-
-    this.setState({email}, () => {
+   
       if (this.state.user_type === 'customer') {
         this.props.history.push('/products')
       } else if ((this.state.user_type === 'farmer')) {
@@ -46,6 +44,7 @@ class App extends Component {
     })
     
     }
+  
   
 
 
