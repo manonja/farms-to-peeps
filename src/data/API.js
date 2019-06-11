@@ -3,11 +3,9 @@ class API {
     static signinUrl = API.baseUrl + '/signin'
     static signupUrl = API.baseUrl + '/signup'
     static validateUrl = API.baseUrl + '/validate'
-    static basketUrl = API.baseUrl + '/basket'
+    static basketUrl = API.baseUrl + '/basket_products'
     static productsUrl = API.baseUrl + '/products'
     
-
-
     static signin (user) {
         return fetch(this.signinUrl, {
             method: "POST",
@@ -17,7 +15,7 @@ class API {
     
        }
     
-       static signup (user) {
+    static signup (user) {
         return fetch(this.signupUrl, {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
@@ -26,38 +24,44 @@ class API {
 
        }
     
-       static validate () {
-           const token = localStorage.getItem('token') 
-           return fetch(this.validateUrl, {
+    static validate () {
+        const token = localStorage.getItem('token') 
+        return fetch(this.validateUrl, {
             headers: { Authorization: token }
         }).then(resp => resp.json())
     }
     
-       static getBasket () {
-           return fetch(this.productsUrl, {
-               headers: {Authorization: localStorage.getItem('token')}
-           }).then(resp => resp.json())
+    static getBasket () {
+        return fetch(this.productsUrl, {
+            headers: {Authorization: localStorage.getItem('token')}
+        }).then(resp => resp.json())
        }
 
-       static createProduct (product) {
+    static createProduct (product) {
         return fetch(this.productsUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json",
             Authorization: localStorage.getItem('token') },
             body: JSON.stringify(product)
-          }).then(resp => resp.json())
+        }).then(resp => resp.json())
      }
 
-     static removeProductFromSale (id) {
+    static removeProductFromSale (id) {
         return fetch(`${this.productsUrl}/${id}`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json",
             Authorization: localStorage.getItem('token') },
-          }).then(resp => resp.json())
+        }).then(resp => resp.json())
+    }
+
+    static addToCustomerBasket (product) {
+        return fetch(this.basketUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json",
+            Authorization: localStorage.getItem('token') },
+            body: JSON.stringify(product)
+        }).then(resp => resp.json())
      }
-
-    
-
 }
 
 export default API

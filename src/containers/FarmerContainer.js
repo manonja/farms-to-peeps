@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 
-import { Route, Switch, Link, withRouter } from 'react-router-dom'
-
 import ProductForm from '../farmerComponents/ProductForm'
 import ProductCollection from '../farmerComponents/ProductCollection'
-
-import API from '../data/API'
 import NavBarLoggedIn from '../components/NavBarLoggedIn';
-import { resolve } from 'url';
 
 
 class FarmerContainer extends Component {
