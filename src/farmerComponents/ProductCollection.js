@@ -12,7 +12,7 @@ class ProductCollection extends Component {
                     product={product}
                     farmerProducts={farmerProducts}
                     addToMyProducts={this.props.addToMyProducts}
-                    removeFromSale={this.props.removeFromSale}
+                    removeProduct={this.props.removeProduct}
 
                 />
             ))

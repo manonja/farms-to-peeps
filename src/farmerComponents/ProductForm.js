@@ -17,18 +17,22 @@ class ProductForm extends Component {
     }
 
     handleSubmit = () => {
+        const {name, price, quantity, url_img} = this.state
+        const id = this.props.current_user.farmer_id
+        
         let product = {
-            name: this.state.name,
-            price: this.state.price, 
-            quantity: this.state.quantity,
-            url_img: this.state.img_url
+            name: name,
+            price: price, 
+            quantity: quantity,
+            url_img: url_img, 
+            farmer_id: id
         }
 
-        // API.createProduct(product)
-        //     .then(product => this.props.addToFarmerProducts(product));    
+        API.createProduct(product)
+            .then(product => this.props.addToFarmerProducts(product));    
 
         // add product to fetch 
-        this.props.addToFarmerProducts(product)
+        // this.props.addToFarmerProducts(product)
 
     }
 
@@ -65,11 +69,11 @@ class ProductForm extends Component {
                         placeholder="quantity" 
                     />
                     <input 
-                        name='img_url' 
+                        name='url_img' 
                         onChange={this.handleChange} 
-                        value={this.state.img_url} 
+                        value={this.state.url_img} 
                         className="form-control mb-4" 
-                        placeholder="img_url" 
+                        placeholder="image url" 
                     />
                     <input 
                         name='category' 

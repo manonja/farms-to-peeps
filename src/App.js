@@ -87,9 +87,13 @@ class App extends Component {
     this.setState({farmerProducts: [...this.state.farmerProducts, newProduct]})
   }
 
-  removeFromSale = (product) => {
-    this.setState({farmerProducts: [...this.state.farmerProducts.filter(p => p.id !== product.id)]})
-
+  removeProduct = (id) => {
+    API.removeProductFromSale(id)
+      .then(this.removeFromSale(id))
+  }
+  
+  removeFromSale = (id) => {
+    this.setState({farmerProducts: [...this.state.farmerProducts.filter(p => p.id !== id)]})
   }
 
 
@@ -111,7 +115,7 @@ class App extends Component {
     }
 
   render() { 
-    const {signin, signup, signout, addToFarmerProducts, removeFromSale} = this
+    const {signin, signup, signout, addToFarmerProducts, removeProduct} = this
     const {email, current_user, farmerProducts, customerBasket } = this.state
     return ( 
       <div className="app-container">
@@ -132,7 +136,7 @@ class App extends Component {
             component={props => <FarmerContainer {...props} 
             farmerProducts={farmerProducts} 
             addToFarmerProducts={addToFarmerProducts} 
-            removeFromSale={removeFromSale}
+            removeProduct={removeProduct}
             email={email} 
             current_user={current_user} 
             signout={signout}/>}/>

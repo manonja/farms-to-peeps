@@ -19,10 +19,11 @@ class FarmerContainer extends Component {
                 <ProductForm
                     farmerProducts={this.props.farmerProducts} 
                     addToFarmerProducts={this.props.addToFarmerProducts}
+                    current_user={this.props.current_user}
                 />
                 <ProductCollection
                     farmerProducts={this.props.farmerProducts}
-                    removeFromSale={this.props.removeFromSale}
+                    removeProduct={this.props.removeProduct}
                 />
             </div>
          );

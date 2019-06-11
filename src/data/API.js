@@ -41,12 +41,21 @@ class API {
 
        static createProduct (product) {
         return fetch(this.productsUrl, {
-         method: "POST",
-         headers: { "Content-Type": "application/json",
-         Authorization: localStorage.getItem('token') },
-         body: JSON.stringify(product)
-       }).then(resp => resp.json())
+            method: "POST",
+            headers: { "Content-Type": "application/json",
+            Authorization: localStorage.getItem('token') },
+            body: JSON.stringify(product)
+          }).then(resp => resp.json())
      }
+
+     static removeProductFromSale (id) {
+        return fetch(`${this.productsUrl}/${id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json",
+            Authorization: localStorage.getItem('token') },
+          }).then(resp => resp.json())
+     }
+
     
 
 }
