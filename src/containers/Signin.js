@@ -5,8 +5,8 @@ import API from '../data/API'
 class Signin extends Component {
     state = {
         email: '',
-        password: '',
-        user_type: ''
+        password: '', 
+        current_user: ''  
     }
 
     handleSubmit = (e) => {
@@ -17,9 +17,9 @@ class Signin extends Component {
                     alert("not working!")
                 }
                 else {
-                    // user is authentificated!
-                    this.props.signin(this.state.email, data.token)
-                    // this.props.history.push('/products')
+                    // user is authentificated! 
+                    this.setState({current_user: data.user})
+                    this.props.signin(this.state.email, this.state.current_user, data.token)
                 }
             })
     }
@@ -28,9 +28,7 @@ class Signin extends Component {
         e.preventDefault()
         this.setState({ [e.target.name]: e.target.value})
     }
-
-
-
+   
     render() { 
         return ( 
 // <!-- Default form login -->
@@ -61,7 +59,6 @@ class Signin extends Component {
                     <button className="btn btn-outline-orange btn-lg " onClick={(e) => this.handleSubmit(e)}> Sign me in! </button>
                 </form>
                 <form className="text-center border border-light p-5">
-
 
                     <h3>NEW USER</h3>
                     <h2 className="h4 mb-4">Register</h2>

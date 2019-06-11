@@ -5,6 +5,7 @@ class API {
     static validateUrl = API.baseUrl + '/validate'
     static basketUrl = API.baseUrl + '/basket'
     static productsUrl = API.baseUrl + '/products'
+    
 
 
     static signin (user) {
@@ -21,8 +22,7 @@ class API {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(user)
-        }).then(resp => resp.json())
-            
+        }).then(resp => resp.json())       
 
        }
     

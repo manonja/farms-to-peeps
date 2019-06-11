@@ -12,7 +12,8 @@ class CustomerContainer extends Component {
     state = { 
         email: this.props.email,
         products: [],
-        basket: []
+        basket: [], 
+        current_user: this.props.current_user
     }
 
     getAllProducts = () => {

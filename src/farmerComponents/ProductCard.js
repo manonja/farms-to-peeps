@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ProductCard extends Component {
 
     render() {
-        const {url_img, name, price, quantity, farm} = this.props.product
+        const {url_img, name, price, quantity} = this.props.product
         return (
 
             <div id='productCard' className="card card-cascade narrower">

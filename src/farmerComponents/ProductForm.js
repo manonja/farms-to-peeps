@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
 
+import API from '../data/API'
+
 class ProductForm extends Component {
     state = {
         name: '',
         price: 0,
         quantity: '',
-        img_url: '',
+        url_img: '',
         category: ''
-    }
-
-    handleSubmit = (e) => {
-        
     }
 
     handleChange = e => {
         e.preventDefault()
         this.setState({ [e.target.name]: e.target.value})
     }
+
+    handleSubmit = () => {
+        let product = {
+            name: this.state.name,
+            price: this.state.price, 
+            quantity: this.state.quantity,
+            url_img: this.state.img_url
+        }
+
+        // API.createProduct(product)
+        //     .then(product => this.props.addToFarmerProducts(product));    
+
+        // add product to fetch 
+        this.props.addToFarmerProducts(product)
+
+    }
+
+
 
     render() {
         return (  
@@ -63,7 +79,7 @@ class ProductForm extends Component {
                         placeholder="category" 
                     />
                
-                    <button className="btn btn-block btn-outline-orange btn-lg" onClick={(e) => this.handleSubmit(e)}  type="submit">Add my product!</button>
+                    <button className="btn btn-block btn-outline-orange btn-lg" onClick={this.handleSubmit}  type="submit">Add my product!</button>
     
                 </form>
             </div>
