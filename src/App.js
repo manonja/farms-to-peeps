@@ -31,8 +31,11 @@ class App extends Component {
     this.setState({email, current_user}, async () => {
       await this.defUserType()
 
-      if (this.state.user_type === 'farmer'){
-        // this.getFarmerData()
+
+    this.setState({email}, () => {
+      if (this.state.user_type === 'customer') {
+        this.props.history.push('/products')
+      } else if ((this.state.user_type === 'farmer')) {
         this.props.history.push('/farmers')
       } else if (this.state.user_type === 'customer'){
         // this.getCustomerData()
@@ -44,6 +47,7 @@ class App extends Component {
     
     }
   
+
 
   signup = (email, user_type) => {
       this.setState({email, user_type})

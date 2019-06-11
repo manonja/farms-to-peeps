@@ -20,6 +20,7 @@ class Signin extends Component {
                     // user is authentificated! 
                     this.setState({current_user: data.user})
                     this.props.signin(this.state.email, this.state.current_user, data.token)
+
                 }
             })
     }
@@ -28,7 +29,7 @@ class Signin extends Component {
         e.preventDefault()
         this.setState({ [e.target.name]: e.target.value})
     }
-   
+
     render() { 
         return ( 
 // <!-- Default form login -->
@@ -63,7 +64,7 @@ class Signin extends Component {
                     <h3>NEW USER</h3>
                     <h2 className="h4 mb-4">Register</h2>
                     <h5>By creating an account with us, you will be able to move through the checkout process faster and view your orders.</h5>
-                    <Link to='/signup'><button className="btn btn-outline-orange btn-lg ">Create an account</button></Link>
+                        <Link to='/signup'><button className="btn btn-outline-orange btn-lg ">Create an account</button></Link>
                 </form>
             </div>
             );
