@@ -30,10 +30,6 @@ class ProductForm extends Component {
 
         API.createProduct(product)
             .then(product => this.props.addToFarmerProducts(product));    
-
-        // add product to fetch 
-        // this.props.addToFarmerProducts(product)
-
     }
 
 

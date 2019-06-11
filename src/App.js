@@ -12,18 +12,17 @@ import CustomerContainer from './containers/CustomerContainer';
 import FarmerContainer from './containers/FarmerContainer';
 
 
-// import CustomerBasket from './containers/CustomerBasket'
-
-
 class App extends Component {
   
   state = {
     email: '',
     user_type: '', 
     current_user: '', 
+    allProducts: [],
     farmerProducts: [],
     customerBasket: [], 
-    farm: ''
+    farm: '', 
+    current_basket: null
   }
 
   signin = (email, current_user, token) => {
@@ -41,13 +40,9 @@ class App extends Component {
       } else {
         this.props.history.push('/')
       }
-    })
-    
-    }
+    })  
+  }
   
-  
-
-
   signup = (email, user_type) => {
       this.setState({email, user_type})
     }
@@ -57,9 +52,8 @@ class App extends Component {
       localStorage.removeItem('token')
       this.props.history.push('/')
   }
-
    // def user type 
-   defUserType = () => {
+  defUserType = () => {
     if (this.state.current_user.farmer_id){
       return this.setState({user_type: 'farmer'})
     } else if (this.state.current_user.customer_id){
@@ -69,21 +63,18 @@ class App extends Component {
     }
   }
 
+  getAllProducts = () => {
+    return fetch('http://localhost:3001/products')
+        .then(resp => resp.json())
+        .then(allProducts => this.setState({allProducts}))
+  }
+
+  // farmer functionalities
   getFarmerData = async () => {
     const id = this.state.current_user.farmer_id
-    console.log(id)
     return fetch(`http://localhost:3001/farmers/${id}`)
         .then(resp => resp.json())
         .then(data => this.setState({farmerProducts: data.products, farm: data.farm}))
-  }
-
-  getCustomerData = async () => {
-    // get customer basket 
-    const id = this.state.current_user.customer_id
-    // basket = data.basket.products
-    return fetch(`http://localhost:3001/customers/${id}`)
-      .then(resp => resp.json())
-      .then(data => this.setState({customerBasket: data.basket.products}))
   }
 
   addToFarmerProducts = (newProduct) => {
@@ -99,6 +90,29 @@ class App extends Component {
     this.setState({farmerProducts: [...this.state.farmerProducts.filter(p => p.id !== id)]})
   }
 
+  // customer functionalities
+  getCustomerData = async () => {
+    // get customer basket 
+    const id = this.state.current_user.customer_id
+    // basket = data.basket.products
+    return fetch(`http://localhost:3001/customers/${id}`)
+      .then(resp => resp.json())
+      .then(data => {
+        if (data.basket){
+          this.setState({customerBasket: data.basket.products, current_basket: data.basket.id})
+        } else {
+          this.setState({customerBasket: [], current_basket: data.id})
+        }
+      })
+  }
+
+  addToBasket = (product) => {
+    this.setState({customerBasket: [...this.state.customerBasket, product]})
+  }
+
+  removeFromBasket = (product) => {
+    this.setState({customerBasket: [...this.state.customerBasket.filter(p => p.id !== product.id)]})
+  }
 
   componentDidMount() {
         API.validate()
@@ -111,6 +125,7 @@ class App extends Component {
                   if (this.state.user_type === 'farmer'){
                     this.getFarmerData()
                   } else if (this.state.user_type === 'customer') {
+                    this.getAllProducts()
                     this.getCustomerData()
                   }
               }
@@ -118,8 +133,8 @@ class App extends Component {
     }
 
   render() { 
-    const {signin, signup, signout, addToFarmerProducts, removeProduct} = this
-    const {email, current_user, farmerProducts, customerBasket } = this.state
+    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, } = this
+    const {email, current_user, farmerProducts, customerBasket, allProducts, current_basket} = this.state
     return ( 
       <div className="app-container">
       <header className="App-header">
@@ -130,9 +145,12 @@ class App extends Component {
           <Route 
             exact path='/products' 
             component={props => <CustomerContainer {...props} 
-            customerBasket={customerBasket} 
+            customerBasket={customerBasket}
+            addToBasket={addToBasket} 
             email={email} 
-            current_user={current_user} 
+            current_user={current_user}
+            current_basket={current_basket}
+            allProducts={allProducts} 
             signout={signout}/>}/>
           <Route 
             exact path='/farmers' 

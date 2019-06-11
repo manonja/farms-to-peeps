@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import API from '../data/API'
 
 class ProductCard extends Component {
 

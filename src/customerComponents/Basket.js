@@ -7,8 +7,8 @@ class Basket extends Component {
         email: this.props.email
     }
     render() { 
-        const {basket} = this.props
-        const product = basket.map(product => (
+        const {customerBasket} = this.props
+        const product = customerBasket.map(product => (
             <BasketCard 
                 key={product.id}
                 product={product}

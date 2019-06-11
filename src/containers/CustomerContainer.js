@@ -9,44 +9,20 @@ import NavBarLoggedIn from '../components/NavBarLoggedIn'
 
 
 class CustomerContainer extends Component {
-    state = { 
-        email: this.props.email,
-        products: [],
-        basket: [], 
-        current_user: this.props.current_user
-    }
-
-    getAllProducts = () => {
-        return fetch('http://localhost:3001/products')
-            .then(resp => resp.json())
-            .then(products => this.setState({products}))
-    }
-
-    componentDidMount() {
-       this.getAllProducts()
-    }
-
-    addToBasket = (newProduct) => {
-        this.setState({basket: [...this.state.basket, newProduct]})
-    }
-
-    removeFromBasket = (product) => {
-        this.setState({basket: [...this.state.basket.filter(p => p.id !== product.id)]})
-    }
-
 
     render() {  
-        const {email, basket, products} = this.state
         return ( 
            <div>
                <NavBarLoggedIn signout={this.props.signout}/>
                <ProductCollection 
-                    products={products}
-                    addToBasket={this.addToBasket}
+                    allProducts={this.props.allProducts}
+                    addToBasket={this.props.addToBasket}
+                    current_basket={this.props.current_basket}
                 />
                 <Basket
-                    email={email}
-                    basket={basket}
+                    current_user={this.props.current_user}
+                    current_basket={this.props.current_basket}
+                    customerBasket={this.props.customerBasket}
                     removeFromBasket={this.removeFromBasket}
                 />
            </div>
