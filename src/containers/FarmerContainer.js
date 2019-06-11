@@ -7,33 +7,23 @@ import ProductCollection from '../farmerComponents/ProductCollection'
 
 import API from '../data/API'
 import NavBarLoggedIn from '../components/NavBarLoggedIn';
+import { resolve } from 'url';
 
 
 class FarmerContainer extends Component {
-    state = {
-        email: this.props.email,
-        first_name: this.props.first_name,
-        products: [], 
-        farm: ''
-    }
-
-    getData = () => {
-        return fetch(`http://localhost:3001/farmers/1`)
-            .then(resp => resp.json())
-            .then(data => this.setState({products: data.products, farm: data.farm}))
-    }
-
-    componentDidMount() {
-        this.getData()
-    }
- 
+  
     render() { 
         return ( 
             <div>
                 <NavBarLoggedIn signout={this.props.signout}/>
-                <ProductForm />
+                <ProductForm
+                    farmerProducts={this.props.farmerProducts} 
+                    addToFarmerProducts={this.props.addToFarmerProducts}
+                    current_user={this.props.current_user}
+                />
                 <ProductCollection
-                    products={this.state.products}
+                    farmerProducts={this.props.farmerProducts}
+                    removeProduct={this.props.removeProduct}
                 />
             </div>
          );

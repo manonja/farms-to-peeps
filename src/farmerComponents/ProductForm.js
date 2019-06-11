@@ -1,22 +1,42 @@
 import React, { Component } from 'react';
 
+import API from '../data/API'
+
 class ProductForm extends Component {
     state = {
         name: '',
         price: 0,
         quantity: '',
-        img_url: '',
+        url_img: '',
         category: ''
-    }
-
-    handleSubmit = (e) => {
-        
     }
 
     handleChange = e => {
         e.preventDefault()
         this.setState({ [e.target.name]: e.target.value})
     }
+
+    handleSubmit = () => {
+        const {name, price, quantity, url_img} = this.state
+        const id = this.props.current_user.farmer_id
+        
+        let product = {
+            name: name,
+            price: price, 
+            quantity: quantity,
+            url_img: url_img, 
+            farmer_id: id
+        }
+
+        API.createProduct(product)
+            .then(product => this.props.addToFarmerProducts(product));    
+
+        // add product to fetch 
+        // this.props.addToFarmerProducts(product)
+
+    }
+
+
 
     render() {
         return (  
@@ -49,11 +69,11 @@ class ProductForm extends Component {
                         placeholder="quantity" 
                     />
                     <input 
-                        name='img_url' 
+                        name='url_img' 
                         onChange={this.handleChange} 
-                        value={this.state.img_url} 
+                        value={this.state.url_img} 
                         className="form-control mb-4" 
-                        placeholder="img_url" 
+                        placeholder="image url" 
                     />
                     <input 
                         name='category' 
@@ -63,7 +83,7 @@ class ProductForm extends Component {
                         placeholder="category" 
                     />
                
-                    <button className="btn btn-block btn-outline-orange btn-lg" onClick={(e) => this.handleSubmit(e)}  type="submit">Add my product!</button>
+                    <button className="btn btn-block btn-outline-orange btn-lg" onClick={this.handleSubmit}  type="submit">Add my product!</button>
     
                 </form>
             </div>

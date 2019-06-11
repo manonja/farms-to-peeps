@@ -5,7 +5,8 @@ import API from '../data/API'
 class Signin extends Component {
     state = {
         email: '',
-        password: ''    
+        password: '', 
+        current_user: ''  
     }
 
     handleSubmit = (e) => {
@@ -16,8 +17,10 @@ class Signin extends Component {
                     alert("not working!")
                 }
                 else {
-                    // user is authentificated!
-                    this.props.signin(this.state.email, data.token)
+                    // user is authentificated! 
+                    this.setState({current_user: data.user})
+                    this.props.signin(this.state.email, this.state.current_user, data.token)
+
                 }
             })
     }
