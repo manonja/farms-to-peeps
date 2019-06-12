@@ -5,15 +5,12 @@ import React, { Component } from 'react';
 
 import Basket from '../customerComponents/Basket'
 import ProductCollection from '../customerComponents/ProductCollection';
-import NavBarLoggedIn from '../components/NavBarLoggedIn'
-
 
 class CustomerContainer extends Component {
 
     render() {  
         return ( 
            <div>
-               <NavBarLoggedIn signout={this.props.signout}/>
                <ProductCollection 
                     allProducts={this.props.allProducts}
                     addToBasket={this.props.addToBasket}

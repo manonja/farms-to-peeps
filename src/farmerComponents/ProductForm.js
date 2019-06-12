@@ -47,7 +47,7 @@ class ProductForm extends Component {
                         onChange={this.handleChange} 
                         value={this.state.name} 
                         className="form-control mb-4" 
-                        placeholder="name" 
+                        placeholder="What product would you like to add?" 
                     />
 
                     <input 
@@ -55,21 +55,21 @@ class ProductForm extends Component {
                         onChange={this.handleChange} 
                         value={this.state.price} 
                         className="form-control mb-4" 
-                        placeholder="price" 
+                        placeholder="£" 
                     />
                     <input 
                         name='quantity' 
                         onChange={this.handleChange} 
                         value={this.state.quantity} 
                         className="form-control mb-4" 
-                        placeholder="quantity" 
+                        placeholder="500g? 4 pieces? 1 bunch?" 
                     />
                     <input 
                         name='url_img' 
                         onChange={this.handleChange} 
                         value={this.state.url_img} 
                         className="form-control mb-4" 
-                        placeholder="image url" 
+                        placeholder="paste your image url here!" 
                     />
                     <input 
                         name='category' 
