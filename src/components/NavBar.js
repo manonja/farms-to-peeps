@@ -17,6 +17,7 @@ class NavBar extends Component {
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
                             <a className="navbar-brand" href="/">Farms To People</a>
+                            
                            
                         </li>
                     </ul>

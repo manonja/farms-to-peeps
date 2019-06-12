@@ -4,7 +4,8 @@ class BasketCard extends Component {
 
 
     render() {
-        const {url_img, name, price, quantity} = this.props.product
+        const {url_img, name, price, quantity, id} = this.props.product
+        const basket_id = this.props.current_basket
         return (
 
             <div id='productCard' className="card card-cascade narrower">
@@ -17,7 +18,7 @@ class BasketCard extends Component {
                     <h4 className="font-weight-bold card-title">{name}</h4>
                     <p className="card-text">£{price}</p>
                     <p className="card-text">{quantity}</p>
-                    <button onClick={() => this.props.removeFromBasket(this.props.product)} className="btn btn-unique" >REMOVE FROM BASKET</button>
+                    <button onClick={() => this.props.deleteProduct(id, basket_id)} className="btn btn-unique" >REMOVE FROM BASKET</button>
                 </div>
                 <div className="card-footer text-muted text-center">Chalk Farm</div>
             </div>
