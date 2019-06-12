@@ -5,6 +5,7 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 
 import API from './data/API'
 
+import Header from './containers/Header'
 import HomePage from './containers/HomePage';
 import Signin from './containers/Signin'
 import Signup from './containers/Signup'
@@ -48,7 +49,7 @@ class App extends Component {
     }
 
   signout = () => {
-      this.setState({email: ''})
+      this.setState({email: '', current_user: ''})
       localStorage.removeItem('token')
       this.props.history.push('/')
   }
@@ -140,10 +141,10 @@ class App extends Component {
 
   render() { 
     const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct } = this
-    const {email, current_user, farmerProducts, customerBasket, allProducts, current_basket} = this.state
+    const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket} = this.state
     return ( 
       <div className="app-container">
-      <header className="App-header">
+        <Header current_user={current_user} user_type={user_type} signout={signout} />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/signin' component={props => <Signin {...props} signin={signin}/>} />
@@ -158,7 +159,8 @@ class App extends Component {
             current_user={current_user}
             current_basket={current_basket}
             allProducts={allProducts} 
-            signout={signout}/>}/>
+            signout={signout}/>}
+          />
           <Route 
             exact path='/farmers' 
             component={props => <FarmerContainer {...props} 
@@ -167,10 +169,10 @@ class App extends Component {
             removeProduct={removeProduct}
             email={email} 
             current_user={current_user} 
-            signout={signout}/>}/>
+            signout={signout}/>}
+          />
           <Route component={() => <h1>Page not found.</h1>} />
         </Switch>     
-      </header>
     </div>
      );
   }
