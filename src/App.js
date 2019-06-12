@@ -109,9 +109,14 @@ class App extends Component {
   addToBasket = (product) => {
     this.setState({customerBasket: [...this.state.customerBasket, product]})
   }
+  
+  deleteProduct = (id, basket_id) => {
+    API.removeProductFromBasket(id, basket_id)
+      .then(this.removeFromBasket(id))
+  }
 
-  removeFromBasket = (product) => {
-    this.setState({customerBasket: [...this.state.customerBasket.filter(p => p.id !== product.id)]})
+  removeFromBasket = (id) => {
+    this.setState({customerBasket: [...this.state.customerBasket.filter(p => p.id !== id)]})
   }
 
   componentDidMount() {
@@ -125,15 +130,16 @@ class App extends Component {
                   if (this.state.user_type === 'farmer'){
                     this.getFarmerData()
                   } else if (this.state.user_type === 'customer') {
-                    this.getAllProducts()
                     this.getCustomerData()
+                    this.getAllProducts()
+
                   }
               }
           })
     }
 
   render() { 
-    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, } = this
+    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct } = this
     const {email, current_user, farmerProducts, customerBasket, allProducts, current_basket} = this.state
     return ( 
       <div className="app-container">
@@ -147,6 +153,7 @@ class App extends Component {
             component={props => <CustomerContainer {...props} 
             customerBasket={customerBasket}
             addToBasket={addToBasket} 
+            deleteProduct={deleteProduct}
             email={email} 
             current_user={current_user}
             current_basket={current_basket}

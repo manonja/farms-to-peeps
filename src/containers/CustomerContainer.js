@@ -23,7 +23,7 @@ class CustomerContainer extends Component {
                     current_user={this.props.current_user}
                     current_basket={this.props.current_basket}
                     customerBasket={this.props.customerBasket}
-                    removeFromBasket={this.removeFromBasket}
+                    deleteProduct={this.props.deleteProduct}
                 />
            </div>
          );

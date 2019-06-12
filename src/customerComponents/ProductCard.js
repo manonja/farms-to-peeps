@@ -28,7 +28,6 @@ class ProductCard extends Component {
 
     render() {
         const {url_img, name, price, quantity, id} = this.props.product
-        console.log(this.props.product)
         return (
 
             <div id='productCard' className="card card-cascade narrower">
