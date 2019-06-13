@@ -28,7 +28,7 @@ body,
   position: relative;
   padding: 1%;
   float: left;
-  width: auto;
+  width: 100%;
   max-width:  300px;
   height: auto;
   max-height: 300px;
@@ -39,15 +39,45 @@ body,
 
 #productCard {
   margin-top: 5%;
-  /* width: auto;
+  width: auto;
   max-width:  800px;
   height: auto;
-  max-height: 800px; */
+  max-height: 800px;
 
 }
 
 #customer-title {
   margin-top: 5%;
+}
+
+#product-category-navbar a {
+  float: left;
+  display: block;
+  color: white !important;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  width: 30%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  text-align: center; /* If you want the text to be centered */
+}
+
+#product-category-navbar a:hover {
+  font-size: 20px;
+}
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+@media screen and (max-width: 500px) {
+  #product-category-navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+  }
+}
+
+#add-basket-btn {
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .productCollection {

@@ -22,6 +22,7 @@ class App extends Component {
     allProducts: [],
     farmerProducts: [],
     customerBasket: [], 
+    productCategories: [],
     farm: '', 
     current_basket: null
   }
@@ -64,9 +65,17 @@ class App extends Component {
   }
 
   getAllProducts = async () => {
-    return fetch('http://localhost:3001/products')
-        .then(resp => resp.json())
+    API.getProducts()
         .then(allProducts => this.setState({allProducts}))
+  }
+
+  // distinct = (value, index, self) => {
+  //   return self.indexOf(value) === index
+  // }
+
+  getProductCategories = async () => {
+    API.getCategories()
+      .then(productCategories => this.setState({productCategories}))
   }
 
   // farmer functionalities
@@ -132,6 +141,7 @@ class App extends Component {
                   } else if (this.state.user_type === 'customer') {
                     this.getCustomerData()
                     this.getAllProducts()
+                    this.getProductCategories()
 
                   }
               }
@@ -139,8 +149,8 @@ class App extends Component {
     }
 
   render() { 
-    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct, basket } = this
-    const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket} = this.state
+    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct } = this
+    const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket, productCategories} = this.state
     return ( 
       <div className="app-container">
         <Header current_user={current_user} user_type={user_type} signout={signout} />
@@ -158,6 +168,7 @@ class App extends Component {
             current_user={current_user}
             current_basket={current_basket}
             allProducts={allProducts} 
+            productCategories={productCategories}
             signout={signout}/>}
           />
           <Route 
