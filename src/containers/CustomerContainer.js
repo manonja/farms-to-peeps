@@ -11,6 +11,8 @@ class CustomerContainer extends Component {
     render() {  
         return ( 
            <div>
+                <h3 id='customer-title' className="d-flex justify-content-center">Shop fresh produces </h3>
+
                <ProductCollection 
                     allProducts={this.props.allProducts}
                     addToBasket={this.props.addToBasket}

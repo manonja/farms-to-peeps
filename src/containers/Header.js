@@ -40,7 +40,7 @@ class Header extends Component {
                             isCustomer 
                             ?   <div>
                                     <Link to='/basket'><i className="fas fa-shopping-basket"></i></Link>
-                                    <Link to='/profile'><button className="btn btn-outline-dark btn-lg my-2 my-sm-0 ml-3">My profile</button></Link> 
+                                    <Link to='/profile'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3">My profile</button></Link> 
                                     <button onClick={this.props.signout} className="btn btn-outline-green btn-md my-2 my-sm-0 ml-3"          type="submit">Logout
                                     </button>
                                 

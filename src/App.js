@@ -36,7 +36,6 @@ class App extends Component {
       } else if ((this.state.user_type === 'farmer')) {
         this.props.history.push('/farmers')
       } else if (this.state.user_type === 'customer'){
-        // this.getCustomerData()
         this.props.history.push('/products')
       } else {
         this.props.history.push('/')
@@ -64,7 +63,7 @@ class App extends Component {
     }
   }
 
-  getAllProducts = () => {
+  getAllProducts = async () => {
     return fetch('http://localhost:3001/products')
         .then(resp => resp.json())
         .then(allProducts => this.setState({allProducts}))
@@ -140,7 +139,7 @@ class App extends Component {
     }
 
   render() { 
-    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct } = this
+    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct, basket } = this
     const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket} = this.state
     return ( 
       <div className="app-container">
