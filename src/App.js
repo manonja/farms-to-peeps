@@ -19,9 +19,11 @@ class App extends Component {
     email: '',
     user_type: '', 
     current_user: '', 
+    filterCategory: '',
     allProducts: [],
     farmerProducts: [],
     customerBasket: [], 
+    productCategories: [],
     farm: '', 
     current_basket: null
   }
@@ -64,9 +66,17 @@ class App extends Component {
   }
 
   getAllProducts = async () => {
-    return fetch('http://localhost:3001/products')
-        .then(resp => resp.json())
+    API.getProducts()
         .then(allProducts => this.setState({allProducts}))
+  }
+
+  // distinct = (value, index, self) => {
+  //   return self.indexOf(value) === index
+  // }
+
+  getProductCategories = async () => {
+    API.getCategories()
+      .then(productCategories => this.setState({productCategories}))
   }
 
   // farmer functionalities
@@ -119,6 +129,21 @@ class App extends Component {
     this.setState({customerBasket: [...this.state.customerBasket.filter(p => p.id !== id)]})
   }
 
+  handleFilterCategory = (category) => {
+    this.setState({filterCategory: category})
+  }
+
+  handleAllCategories = () => {
+    this.setState({filterCategory: ''})
+  }
+
+  filterProducts = (category) => {
+    const products = this.state.allProducts
+    const filteredProducts = products.filter(product => product.category.name === category)
+    return filteredProducts
+  }
+
+
   componentDidMount() {
         API.validate()
           .then(data => {
@@ -132,6 +157,7 @@ class App extends Component {
                   } else if (this.state.user_type === 'customer') {
                     this.getCustomerData()
                     this.getAllProducts()
+                    this.getProductCategories()
 
                   }
               }
@@ -139,8 +165,8 @@ class App extends Component {
     }
 
   render() { 
-    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct, basket } = this
-    const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket} = this.state
+    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct, filterProducts, handleFilterCategory, handleAllCategories } = this
+    const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket, productCategories, filterCategory} = this.state
     return ( 
       <div className="app-container">
         <Header current_user={current_user} user_type={user_type} signout={signout} />
@@ -158,6 +184,11 @@ class App extends Component {
             current_user={current_user}
             current_basket={current_basket}
             allProducts={allProducts} 
+            productCategories={productCategories}
+            handleFilterCategory={handleFilterCategory}
+            handleAllCategories={handleAllCategories}
+            filterProducts={filterProducts}
+            filterCategory={filterCategory}
             signout={signout}/>}
           />
           <Route 

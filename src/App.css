@@ -28,7 +28,7 @@ body,
   position: relative;
   padding: 1%;
   float: left;
-  width: auto;
+  width: 100%;
   max-width:  300px;
   height: auto;
   max-height: 300px;
@@ -39,15 +39,54 @@ body,
 
 #productCard {
   margin-top: 5%;
-  /* width: auto;
+  width: auto;
   max-width:  800px;
   height: auto;
-  max-height: 800px; */
+  max-height: 800px;
 
 }
 
 #customer-title {
   margin-top: 5%;
+}
+
+
+#product-category-navbar  {
+  height: 40px !important; /*i assume your navbar size 100px*/
+  padding: 0  !important;
+  justify-content: center;
+}
+
+
+#product-category {
+  float: left;
+  display: block;
+  color: white !important;
+  text-transform: lowercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  /* width: 30%;  */
+  text-align: center; /* If you want the text to be centered */
+}
+
+#product-category-navbar li a:hover {
+  font-size: 20px;
+}
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+@media screen and (max-width: 500px) {
+  #product-category-navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+  }
+}
+
+#add-basket-btn {
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .productCollection {
@@ -60,6 +99,7 @@ body,
 }
 
   .navbar {
+    min-height: 10px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -73,21 +113,23 @@ body,
     z-index: 1;
   }
 
-  .nav {
-    display: flex;
-    justify-content: right;
-    list-style: none;
-    margin-right: 5%;
-  } 
-
-  .logo {
+  .navbar-brand {
     flex: 1 1 auto;
+    margin-top: 5%;
     margin-left: 5%;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
-    font-size: 35px;
+  }
+
+  .nav {
+    min-height: 10px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-right: 5%;
   } 
+
 
     a {
       margin: 10px;
