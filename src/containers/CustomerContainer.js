@@ -14,12 +14,16 @@ class CustomerContainer extends Component {
            <div>
                 <CategoriesBar
                     productCategories={this.props.productCategories} 
+                    allProducts={this.props.allProducts}
+                    handleFilterCategory={this.props.handleFilterCategory}
                 />
                 <h3 id='customer-title' className="d-flex justify-content-center">Shop fresh produces </h3>
                 <ProductCollection 
                     allProducts={this.props.allProducts}
                     addToBasket={this.props.addToBasket}
                     current_basket={this.props.current_basket}
+                    filterProducts={this.props.filterProducts}
+                    filterCategory={this.props.filterCategory}
                 />
                 {/* <Basket
                     current_user={this.props.current_user}

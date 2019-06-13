@@ -50,18 +50,27 @@ body,
   margin-top: 5%;
 }
 
-#product-category-navbar a {
+
+#product-category-navbar  {
+  height: 40px !important; /*i assume your navbar size 100px*/
+  padding: 0  !important;
+  justify-content: center;
+}
+
+
+#product-category {
   float: left;
   display: block;
   color: white !important;
+  text-transform: lowercase;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
-  width: 30%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  /* width: 30%;  */
   text-align: center; /* If you want the text to be centered */
 }
 
-#product-category-navbar a:hover {
+#product-category-navbar li a:hover {
   font-size: 20px;
 }
 
@@ -90,6 +99,7 @@ body,
 }
 
   .navbar {
+    min-height: 10px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -103,21 +113,23 @@ body,
     z-index: 1;
   }
 
-  .nav {
-    display: flex;
-    justify-content: right;
-    list-style: none;
-    margin-right: 5%;
-  } 
-
-  .logo {
+  .navbar-brand {
     flex: 1 1 auto;
+    margin-top: 5%;
     margin-left: 5%;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
-    font-size: 35px;
+  }
+
+  .nav {
+    min-height: 10px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-right: 5%;
   } 
+
 
     a {
       margin: 10px;

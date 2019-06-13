@@ -19,6 +19,7 @@ class App extends Component {
     email: '',
     user_type: '', 
     current_user: '', 
+    filterCategory: '',
     allProducts: [],
     farmerProducts: [],
     customerBasket: [], 
@@ -128,6 +129,16 @@ class App extends Component {
     this.setState({customerBasket: [...this.state.customerBasket.filter(p => p.id !== id)]})
   }
 
+  handleFilterCategory = (category) => {
+    this.setState({filterCategory: category})
+  }
+
+  filterProducts = (category) => {
+    const products = this.state.allProducts
+    const filteredProducts = products.filter(product => product.category.name === category)
+    return filteredProducts
+  }
+
   componentDidMount() {
         API.validate()
           .then(data => {
@@ -149,8 +160,8 @@ class App extends Component {
     }
 
   render() { 
-    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct } = this
-    const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket, productCategories} = this.state
+    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct, filterProducts, handleFilterCategory } = this
+    const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket, productCategories, filterCategory} = this.state
     return ( 
       <div className="app-container">
         <Header current_user={current_user} user_type={user_type} signout={signout} />
@@ -169,6 +180,9 @@ class App extends Component {
             current_basket={current_basket}
             allProducts={allProducts} 
             productCategories={productCategories}
+            handleFilterCategory={handleFilterCategory}
+            filterProducts={filterProducts}
+            filterCategory={filterCategory}
             signout={signout}/>}
           />
           <Route 
