@@ -17,7 +17,9 @@ class ProductCollection extends Component  {
             />
         ))
         return (
-            <div className= 'productCollection'> {product} </div>
+            <div className= 'productCollection'> 
+                {product} 
+            </div>
         )
     } 
 }
