@@ -7,9 +7,9 @@ class ProductCollection extends Component  {
 
     render() {
         const {allProducts, filterCategory, filterProducts} = this.props
-        
+
         const product = 
-            !filterCategory 
+            filterCategory === ''
                 ? allProducts.map(product => (
                     <ProductCard 
                         key={product.id}

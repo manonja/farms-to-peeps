@@ -16,6 +16,7 @@ class CustomerContainer extends Component {
                     productCategories={this.props.productCategories} 
                     allProducts={this.props.allProducts}
                     handleFilterCategory={this.props.handleFilterCategory}
+                    handleAllCategories={this.props.handleAllCategories}
                 />
                 <h3 id='customer-title' className="d-flex justify-content-center">Shop fresh produces </h3>
                 <ProductCollection 

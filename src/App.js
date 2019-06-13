@@ -133,11 +133,16 @@ class App extends Component {
     this.setState({filterCategory: category})
   }
 
+  handleAllCategories = () => {
+    this.setState({filterCategory: ''})
+  }
+
   filterProducts = (category) => {
     const products = this.state.allProducts
     const filteredProducts = products.filter(product => product.category.name === category)
     return filteredProducts
   }
+
 
   componentDidMount() {
         API.validate()
@@ -160,7 +165,7 @@ class App extends Component {
     }
 
   render() { 
-    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct, filterProducts, handleFilterCategory } = this
+    const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct, filterProducts, handleFilterCategory, handleAllCategories } = this
     const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket, productCategories, filterCategory} = this.state
     return ( 
       <div className="app-container">
@@ -181,6 +186,7 @@ class App extends Component {
             allProducts={allProducts} 
             productCategories={productCategories}
             handleFilterCategory={handleFilterCategory}
+            handleAllCategories={handleAllCategories}
             filterProducts={filterProducts}
             filterCategory={filterCategory}
             signout={signout}/>}

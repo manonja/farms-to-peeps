@@ -10,6 +10,7 @@ class CategoriesBar extends Component {
                 <a  
                     href='#allProduces'
                     key='all produces'
+                    onClick={this.props.handleAllCategories}
                     id='product-category'>All Produces
                 </a>
                 { categories.map(category => 
