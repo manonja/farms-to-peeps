@@ -5,7 +5,7 @@ import API from '../data/API'
 class ProductCard extends Component {
 
     state = {
-        basket_id: this.props.current_basket
+        basket_id: this.props.basket_id
     }
 
     handleChange = e => {

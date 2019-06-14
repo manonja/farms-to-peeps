@@ -16,7 +16,7 @@ class ProductCollection extends Component  {
                         id={product.id}
                         product={product}
                         addToBasket={this.props.addToBasket}
-                        current_basket={this.props.current_basket}
+                        basket_id={this.props.basket_id}
                     />
                 ))
                 : filterProducts(filterCategory).map(
@@ -26,7 +26,7 @@ class ProductCollection extends Component  {
                             id={product.id}
                             product={product}
                             addToBasket={this.props.addToBasket}
-                            current_basket={this.props.current_basket}
+                            basket_id={this.props.basket_id}
                         />
                     ))
 

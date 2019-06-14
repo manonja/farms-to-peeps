@@ -7,9 +7,10 @@ class API {
     static productsUrl = API.baseUrl + '/products'
     static removeUrl = API.baseUrl + '/remove'
     static categoriesUrl = API.baseUrl + '/categories'
+    static FarmerProfileUrl = API.baseUrl + '/farmer-profile'
+    static peepProfileUrl = API.baseUrl + '/peep-profile'
 
 
-    
     static signin (user) {
         return fetch(this.signinUrl, {
             method: "POST",

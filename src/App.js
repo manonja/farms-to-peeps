@@ -7,6 +7,8 @@ import API from './data/API'
 
 import Header from './containers/Header'
 import HomePage from './containers/HomePage';
+import FarmerProfile from './containers/FarmerProfile'
+import CustomerProfile from './containers/CustomerProfile'
 import Signin from './containers/Signin'
 import Signup from './containers/Signup'
 import CustomerContainer from './containers/CustomerContainer';
@@ -17,15 +19,15 @@ class App extends Component {
   
   state = {
     email: '',
-    user_type: '', 
     current_user: '', 
+    user_type: '', 
     filterCategory: '',
     allProducts: [],
     farmerProducts: [],
     customerBasket: [], 
     productCategories: [],
     farm: '', 
-    current_basket: null
+    basket_id: null
   }
 
   signin = (email, current_user, token) => {
@@ -34,15 +36,14 @@ class App extends Component {
       await this.defUserType()
    
       if (this.state.user_type === 'customer') {
-        this.props.history.push('/products')
-      } else if ((this.state.user_type === 'farmer')) {
-        this.props.history.push('/farmers')
-      } else if (this.state.user_type === 'customer'){
-        this.props.history.push('/products')
+        this.props.history.push('/peep-profile')
+      } else if (this.state.user_type === 'farmer') {
+        this.props.history.push('/farmer-profile')
+
       } else {
         this.props.history.push('/')
-      }
-    })  
+      }        
+      })  
   }
   
   signup = (email, user_type) => {
@@ -105,6 +106,7 @@ class App extends Component {
     // get customer basket 
     const id = this.state.current_user.customer_id
     // basket = data.basket.products
+    // add headers: {Authorization: localStorage.getItem('token')}
     return fetch(`http://localhost:3001/customers/${id}`)
       .then(resp => resp.json())
       .then(data => {
@@ -143,7 +145,6 @@ class App extends Component {
     return filteredProducts
   }
 
-
   componentDidMount() {
         API.validate()
           .then(data => {
@@ -166,7 +167,7 @@ class App extends Component {
 
   render() { 
     const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct, filterProducts, handleFilterCategory, handleAllCategories } = this
-    const {email, current_user, user_type, farmerProducts, customerBasket, allProducts, current_basket, productCategories, filterCategory} = this.state
+    const {current_user, user_type, farmerProducts, customerBasket, allProducts, basket_id, productCategories, filterCategory} = this.state
     return ( 
       <div className="app-container">
         <Header current_user={current_user} user_type={user_type} signout={signout} />
@@ -175,14 +176,26 @@ class App extends Component {
           <Route exact path='/signin' component={props => <Signin {...props} signin={signin}/>} />
           <Route exact path='/signup' component={props => <Signup {...props} signup={signup}/>} />
           <Route 
+            exact path='/peep-profile' 
+            component={props => <CustomerProfile {...props} 
+            current_user={current_user}
+            customerBasket={customerBasket} />}
+          />
+           <Route 
+            exact path='/farmer-profile' 
+            component={props => <FarmerProfile {...props} 
+            current_user={current_user}
+            farmerProducts={farmerProducts} />}
+          />
+
+          <Route 
             exact path='/products' 
             component={props => <CustomerContainer {...props} 
+            current_user={current_user}
+            basket_id={basket_id}
             customerBasket={customerBasket}
             addToBasket={addToBasket} 
             deleteProduct={deleteProduct}
-            email={email} 
-            current_user={current_user}
-            current_basket={current_basket}
             allProducts={allProducts} 
             productCategories={productCategories}
             handleFilterCategory={handleFilterCategory}
@@ -194,11 +207,10 @@ class App extends Component {
           <Route 
             exact path='/farmers' 
             component={props => <FarmerContainer {...props} 
+            current_user={current_user} 
             farmerProducts={farmerProducts} 
             addToFarmerProducts={addToFarmerProducts} 
             removeProduct={removeProduct}
-            email={email} 
-            current_user={current_user} 
             signout={signout}/>}
           />
           <Route component={() => <h1>Page not found.</h1>} />
