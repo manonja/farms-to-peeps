@@ -11,7 +11,7 @@ class Header extends Component {
         const isCustomer = this.props.current_user && this.props.user_type === 'customer'
         
         return ( 
-            <nav className="navbar navbar-expand-lg navbar-light sticky-top scrolling-navbar">
+            <nav className="navbar navbar-expand-lg sticky-top scrolling-navbar ">
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                 aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
