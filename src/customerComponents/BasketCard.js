@@ -6,6 +6,7 @@ class BasketCard extends Component {
     render() {
         const {url_img, name, price, quantity, id} = this.props.product
         const basket_id = this.props
+
         return (
 
             <div id='productCard' className="card card-cascade narrower">

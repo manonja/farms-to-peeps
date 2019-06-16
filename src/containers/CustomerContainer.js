@@ -22,6 +22,7 @@ class CustomerContainer extends Component {
                 <ProductCollection 
                     allProducts={this.props.allProducts}
                     addToBasket={this.props.addToBasket}
+                    customerBasket={this.props.customerBasket}
                     basket_id={this.props.basket_id}
                     filterProducts={this.props.filterProducts}
                     filterCategory={this.props.filterCategory}

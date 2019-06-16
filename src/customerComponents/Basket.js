@@ -11,7 +11,7 @@ class Basket extends Component {
                 key={product.id}
                 product={product}
                 deleteProduct={this.props.deleteProduct}
-                current_basket={this.props.current_basket}
+                basket_id={this.props.basket_id}
             />
         ))
         return (

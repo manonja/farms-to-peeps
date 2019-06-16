@@ -10,15 +10,22 @@ class ProductCard extends Component {
     }
 
     handleSubmit = (id, product) => {
-        const {basket_id} = this.props
+        const {basket_id, customerBasket} = this.props
+        console.log(customerBasket)
+
+        const itemAlreadyInBasket = customerBasket.some(el => el.id === id);
 
         let productForApi = {
             product_id: id,
             basket_id
         }
         
-        API.addToCustomerBasket(productForApi)
-        this.props.addToBasket(product);    
+       if (itemAlreadyInBasket){
+            API.addToCustomerBasket(productForApi)
+           this.props.addToBasket(product);     
+       } else {
+        alert('You already have this item in your basket!')
+       }    
     }
 
 

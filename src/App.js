@@ -114,7 +114,7 @@ class App extends Component {
       .then(resp => resp.json())
       .then(data => {
         if (data.basket){
-          this.setState({customerBasket: [...this.state.customerBasket, data.basket.products], basket_id: data.basket.id})
+          this.setState({customerBasket:  data.basket.products, basket_id: data.basket.id})
         } else {
           API.createCustomerBasket(customer)
             .then(basket => this.setState({basket_id: basket.id}))
@@ -128,8 +128,8 @@ class App extends Component {
   }
   
   deleteProduct = (id, basket_id) => {
-    console.log('id:', id, 'basket_id:', basket_id.product.id )
-    API.removeProductFromBasket(id, basket_id)
+    console.log('id:', id, 'basket_id:', basket_id.basket_id )
+    API.removeProductFromBasket(id, basket_id.basket_id)
       .then(this.removeFromBasket(id))
   }
 
