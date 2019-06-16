@@ -15,13 +15,13 @@ class BasketDetails extends Component {
         ))
 
         return ( 
-            <div className="container d-flex align-items-center justify-content-center">
-                <h2>Your Basket</h2>
+            <div id='basketContainer'>
+            <h2>Your Basket</h2>
+            <div className="productCollection">
                 <div > {product} </div>
-
-                
-
             </div>
+            </div>
+           
             
          );
     }

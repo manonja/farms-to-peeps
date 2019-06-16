@@ -12,22 +12,24 @@ class Header extends Component {
         
         return ( 
             <nav className="navbar navbar-expand-lg sticky-top scrolling-navbar ">
+         
+            <Link to='/'> <p className="navbar-brand">Farms To Peeps</p> </Link>
+
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                 aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
     
-            <div className="collapse navbar-collapse" id="basicExampleNav">
+            <div className="collapse navbar-collapse" id="navbar-header">
                 <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                        <Link to='/'> <p className="navbar-brand">Farms To Peeps</p> </Link>
-                    </li>
                     <li>
-                        <Link to='/products'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3 shop">Shop</button></Link>
+                        <Link to='/products'><p className="shop">Shop</p></Link>
                     </li>
                 </ul>
-                <ul className='nav form-inline my-2 my-lg-0 ml-auto '>
-
+                    
+                   
+                <ul className='nav form-inline my-8 my-lg-9 ml-auto '>
+                
                 <h5> 
                 {   
                     !this.props.current_user  
@@ -45,9 +47,9 @@ class Header extends Component {
                             isCustomer 
                             ?   <div>
                                     <Link to='/basket'><i className="fas fa-shopping-basket"></i></Link>
-                                    <Link to='/products'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3 shop">Shop</button></Link>
-                                    <Link to='/peep-profile'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3">My profile</button></Link> 
-                                    <button onClick={this.props.signout} className="btn btn-outline-orange btn-md my-2 my-sm-0 ml-3"          type="submit">Logout
+                                    <Link to='/peep-profile'><p className="my-2 my-sm-0 ml-3">My profile</p></Link> 
+                                    <button onClick={this.props.signout} className="btn btn-outline-orange btn-md my-2 my-sm-0 ml-3"          
+                                    type="submit">Logout
                                     </button>
                                 
                                 </div>

@@ -31,20 +31,28 @@ h3 {
   padding: 1%;
   float: left;
   width: 100%;
-  max-width:  300px;
+  max-width:  500px;
   height: auto;
-  max-height: 300px;
+  max-height: 500px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.shop {
+  padding-top: 10%;
+}
+
+h2 {
+  text-align: center;
+}
+
 #productCard {
   margin-top: 5%;
   width: auto;
-  max-width:  800px;
+  max-width:  400px;
   height: auto;
-  max-height: 800px;
+  max-height: 400px;
 
 }
 
@@ -119,7 +127,6 @@ h3 {
   .navbar-brand {
     flex: 1 1 auto;
     margin-top: 5%;
-    margin-left: 5%;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
@@ -135,10 +142,9 @@ h3 {
 
 
     a {
-      margin: 10px;
+      margin: 5px;
       color: #000 !important;
       text-decoration: none;
-      text-transform: uppercase;
     }
 
     a:hover {

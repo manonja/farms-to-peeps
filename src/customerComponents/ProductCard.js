@@ -20,11 +20,11 @@ class ProductCard extends Component {
             basket_id
         }
         
-       if (itemAlreadyInBasket){
-            API.addToCustomerBasket(productForApi)
-           this.props.addToBasket(product);     
+       if (!itemAlreadyInBasket && customerBasket === []){
+             alert('You already have this item in your basket!')
        } else {
-        alert('You already have this item in your basket!')
+        API.addToCustomerBasket(productForApi)
+           this.props.addToBasket(product);   
        }    
     }
 

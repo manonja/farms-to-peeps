@@ -14,6 +14,7 @@ class CustomerProfile extends Component {
     }
 
     render() { 
+        const {option} = this.state
         const rendering = (option) => {
             if (option === 'accountDetails'){
                 return <AccountDetails current_user={this.props.current_user}/>
@@ -33,7 +34,7 @@ class CustomerProfile extends Component {
                     <a onClick={this.handleSelectOption} name='recurringItem'>Recurring Items</a>
                 </div>
                 <div id='profile-components' className="content">
-                    {rendering(this.state.option)}
+                    {rendering(option)}
                 </div>
             </main>
          );
