@@ -11,7 +11,7 @@ class HomePage extends Component {
                     <div className="container d-flex align-items-center justify-content-center h-100">
                         <div className="row d-flex justify-content-center text-center">
                             <div className="col-md-10">
-                                <h2 className="display-4 font-weight-bold white-text pt-5 mb-2">Farm To Peeps</h2>
+                                <h2 className="display-4 font-weight-bold white-text pt-5 mb-2">Farms To Peeps</h2>
                                 <hr className="hr-light"/>
                                 <h4 className="white-text my-4">Get fresh produces from dedicated farmers</h4>
                                 <Link to='/signin'><button  id='farmer-btn' type="button" className="btn btn-outline-white">GET STARTED</button></Link>
@@ -33,22 +33,19 @@ class HomePage extends Component {
                         </div>
                         <div className="row">
                             <div className="col-md-4 mb-1">
-                                <i className="fas fa-camera-retro"></i>
+                                <i className="fas fa-carrot"></i>
                                 <h4 className="my-4">Farmers</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                                    assumenda deleniti hic.</p>
+                                <p>Are you a farmer? You can now put your products online and connect with local consumers.</p>
                             </div>
                             <div className="col-md-4 mb-1">
                                 <i className="fas fa-heart"></i>
                                 <h4 className="my-4">People</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                                    assumenda deleniti hic.</p>
+                                <p>Do you want to eat local but don't have time to go to farmer's markets? No problem! You can buy online directly from farmers.</p>
                             </div>
                             <div className="col-md-4 mb-1">
-                                <i className="fas fa-bicycle"></i>
+                                <i className="fas fa-users"></i>
                                 <h4 className="my-4">Community</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                                    assumenda deleniti hic.</p>
+                                <p>Our hope is to grow a conscious community and shape a more sustainable world together!</p>
                             </div>
                         </div>
                     </section>
@@ -63,9 +60,7 @@ class HomePage extends Component {
                             </a>
                         </div>
                         <h4 className="my-4 font-weight-bold">Local Farms</h4>
-                        <p className="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam,
-                            aperiam minima
-                            assumenda deleniti hic.</p>
+                        <p className="grey-text"></p>
                         </div>
                         <div className="col-lg-4 col-md-6 mb-4">
                         <div className="view overlay z-depth-1-half">
@@ -75,9 +70,7 @@ class HomePage extends Component {
                                 </a>
                             </div>
                             <h4 className="my-4 font-weight-bold">Sustainable</h4>
-                            <p className="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam,
-                                aperiam minima
-                                assumenda deleniti hic.</p>
+                            <p className="grey-text"></p>
                             </div>
                         <div className="col-lg-4 col-md-6 mb-4">
                             <div className="view overlay z-depth-1-half">
@@ -87,9 +80,7 @@ class HomePage extends Component {
                                 </a>
                             </div>
                             <h4 className="my-4 font-weight-bold">Fresh</h4>
-                            <p className="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam,
-                                aperiam minima
-                                assumenda deleniti hic.</p>
+                            <p className="grey-text"></p>
                             </div>
                         </div>
                     </section>
@@ -132,10 +123,7 @@ class HomePage extends Component {
                                 <h6 className="pb-1"><i className="fas fa-heart"></i><strong> Peep </strong></h6>
                             </a>
                             <h4 className="mb-3"><strong>It finally becomes easy to eat local!</strong></h4>
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                                placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
-                                debitis aut rerum.</p>
-
+                            <p>Before using farms to peeps, I wasn't able to get fresh local produces from farmers market.</p>
                             <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
                                 placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
                                 debitis aut rerum.</p>

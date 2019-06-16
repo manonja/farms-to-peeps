@@ -3,7 +3,8 @@ class API {
     static signinUrl = API.baseUrl + '/signin'
     static signupUrl = API.baseUrl + '/signup'
     static validateUrl = API.baseUrl + '/validate'
-    static basketUrl = API.baseUrl + '/basket_products'
+    static basketUrl = API.baseUrl + '/baskets'
+    static basketProductUrl = API.baseUrl + '/basket_products'
     static productsUrl = API.baseUrl + '/products'
     static removeUrl = API.baseUrl + '/remove'
     static categoriesUrl = API.baseUrl + '/categories'
@@ -69,9 +70,18 @@ class API {
         }).then(resp => resp.json())
     }
 
-    static addToCustomerBasket (product) {
+    static createCustomerBasket (customer) {
         return fetch(this.basketUrl, {
-            method: "POST",
+            method: 'POST', 
+            headers: { "Content-Type": "application/json",
+            Authorization: localStorage.getItem('token') },
+            body: JSON.stringify(customer)
+        }).then(resp => resp.json())
+    }
+
+    static addToCustomerBasket (product) {
+        return fetch(this.basketProductUrl, {
+            method: 'POST',
             headers: { "Content-Type": "application/json",
             Authorization: localStorage.getItem('token') },
             body: JSON.stringify(product)
