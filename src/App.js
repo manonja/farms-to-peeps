@@ -36,7 +36,7 @@ class App extends Component {
       await this.defUserType()
    
       if (this.state.user_type === 'customer') {
-        this.props.history.push('/peep-profile')
+        this.props.history.push('/products')
       } else if (this.state.user_type === 'farmer') {
         this.props.history.push('/farmer-profile')
 
@@ -105,15 +105,20 @@ class App extends Component {
   getCustomerData = async () => {
     // get customer basket 
     const id = this.state.current_user.customer_id
+    const customer = {
+      customer_id: id
+    }
     // basket = data.basket.products
     // add headers: {Authorization: localStorage.getItem('token')}
     return fetch(`http://localhost:3001/customers/${id}`)
       .then(resp => resp.json())
       .then(data => {
         if (data.basket){
-          this.setState({customerBasket: data.basket.products, current_basket: data.basket.id})
+          this.setState({customerBasket: [...this.state.customerBasket, data.basket.products], basket_id: data.basket.id})
         } else {
-          this.setState({customerBasket: [], current_basket: data.id})
+          API.createCustomerBasket(customer)
+            .then(basket => this.setState({basket_id: basket.id}))
+
         }
       })
   }
@@ -123,6 +128,7 @@ class App extends Component {
   }
   
   deleteProduct = (id, basket_id) => {
+    console.log('id:', id, 'basket_id:', basket_id.product.id )
     API.removeProductFromBasket(id, basket_id)
       .then(this.removeFromBasket(id))
   }
@@ -149,7 +155,9 @@ class App extends Component {
         API.validate()
           .then(data => {
               if(data.error){
-                  this.props.history.push('/')
+                this.getAllProducts()
+                this.getProductCategories()
+                this.props.history.push('/')
               }
               else {
                   this.signin(data.email, data.user, localStorage.getItem('token')) 
@@ -179,7 +187,8 @@ class App extends Component {
             exact path='/peep-profile' 
             component={props => <CustomerProfile {...props} 
             current_user={current_user}
-            customerBasket={customerBasket} />}
+            customerBasket={customerBasket}
+            deleteProduct={deleteProduct}/>}
           />
            <Route 
             exact path='/farmer-profile' 

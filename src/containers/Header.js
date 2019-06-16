@@ -20,7 +20,10 @@ class Header extends Component {
             <div className="collapse navbar-collapse" id="basicExampleNav">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                   <Link to='/'> <p className="navbar-brand">Farms To Peeps</p> </Link>
+                        <Link to='/'> <p className="navbar-brand">Farms To Peeps</p> </Link>
+                    </li>
+                    <li>
+                        <Link to='/products'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3 shop">Shop</button></Link>
                     </li>
                 </ul>
                 <ul className='nav form-inline my-2 my-lg-0 ml-auto '>
@@ -35,18 +38,21 @@ class Header extends Component {
 
                 <div>
                     { noUserLoggedIn 
-                        ?  <Link to='/signin'><li>Login</li></Link>
+                        ?  <div>
+                            <Link to='/signin'><li>Login</li></Link>
+                            </div>
                         : (
                             isCustomer 
                             ?   <div>
                                     <Link to='/basket'><i className="fas fa-shopping-basket"></i></Link>
-                                    <Link to='/profile'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3">My profile</button></Link> 
+                                    <Link to='/products'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3 shop">Shop</button></Link>
+                                    <Link to='/peep-profile'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3">My profile</button></Link> 
                                     <button onClick={this.props.signout} className="btn btn-outline-orange btn-md my-2 my-sm-0 ml-3"          type="submit">Logout
                                     </button>
                                 
                                 </div>
                             :  <div>
-                                    <Link to='/profile'><button className="btn btn-outline-dark btn-lg my-2 my-sm-0 ml-3">My profile</button></Link> 
+                                    <Link to='/farmer-profile'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3">My profile</button></Link> 
                                     <button onClick={this.props.signout} className="btn btn-outline-green btn-md my-2 my-sm-0 ml-3"          type="submit">Logout
                                     </button>
                                 </div>

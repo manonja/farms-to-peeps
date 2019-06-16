@@ -4,23 +4,19 @@ import API from '../data/API'
 
 class ProductCard extends Component {
 
-    state = {
-        basket_id: this.props.basket_id
-    }
-
     handleChange = e => {
         e.preventDefault()
         this.setState({ product_id: e.target.value})
     }
 
     handleSubmit = (id, product) => {
-        const {basket_id} = this.state
-        
+        const {basket_id} = this.props
+
         let productForApi = {
             product_id: id,
             basket_id
         }
-
+        
         API.addToCustomerBasket(productForApi)
         this.props.addToBasket(product);    
     }

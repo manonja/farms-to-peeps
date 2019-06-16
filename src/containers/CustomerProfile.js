@@ -18,7 +18,7 @@ class CustomerProfile extends Component {
             if (option === 'accountDetails'){
                 return <AccountDetails current_user={this.props.current_user}/>
              } else if (option === 'basket'){
-                return <BasketDetails/>
+                return <BasketDetails customerBasket={this.props.customerBasket} deleteProduct={this.props.deleteProduct}/>
              } else if (option === 'deliveries' || option === 'recurringItem'){
                 return <ComingSoon />
              }
