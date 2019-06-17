@@ -17,6 +17,8 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-sidebar": "^3.0.2",
+    "react-sliding-pane": "^3.1.0",
     "whatwg": "^2.0.0"
   },
   "scripts": {

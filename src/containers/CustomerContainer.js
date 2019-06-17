@@ -27,12 +27,6 @@ class CustomerContainer extends Component {
                     filterProducts={this.props.filterProducts}
                     filterCategory={this.props.filterCategory}
                 />
-                <Basket
-                    current_user={this.props.current_user}
-                    basket_id={this.props.basket_id}
-                    customerBasket={this.props.customerBasket}
-                    deleteProduct={this.props.deleteProduct}
-                />
            </div>
          );
     }
