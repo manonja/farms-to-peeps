@@ -4,6 +4,7 @@ import AccountDetails from '../components/AccountDetails'
 import BasketDetails from '../components/BasketDetails'
 import ComingSoon from './ComingSoon';
 
+
 class CustomerProfile extends Component {
     state = {
        option: 'accountDetails'

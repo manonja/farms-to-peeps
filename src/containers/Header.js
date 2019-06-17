@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 
 import {Link} from 'react-router-dom'
+import Modal from 'react-modal'
+import SlidingPane from 'react-sliding-pane'
+import 'react-sliding-pane/dist/react-sliding-pane.css'
+
+import Basket from '../customerComponents/Basket'
 
 
 class Header extends Component {
+
+    state = {
+        isPaneOpen: false
+    }
+
+    componentDidMount() {
+        Modal.setAppElement(this.el);
+    }
     
     render() { 
 
         const noUserLoggedIn = !this.props.current_user
         const isCustomer = this.props.current_user && this.props.user_type === 'customer'
+        
         
         return ( 
             <nav className="navbar navbar-expand-lg sticky-top scrolling-navbar ">
@@ -24,29 +38,59 @@ class Header extends Component {
                 <ul className="navbar-nav mr-auto shop">
                         <Link to='/products'><p className="shop">Shop</p></Link>
                         <Link to='/'><p className="shop">About</p></Link>
-
                 </ul>
-            
-                                         
-                <ul className='navbar-nav mx-auto'>
+                                   
                 
                 {   
                     !this.props.current_user  
-                    ?       
-                        <Link to='/signup'>REGISTER</Link> 
-                    : `Welcome (back), ${this.props.current_user.first_name}!`
+                    ?    
+                    <ul className='navbar-nav mr-auto'><Link to='/signup'>REGISTER</Link> 
+                    </ul> 
+                        
+                    : 
+                    <ul className='navbar-nav mx-auto'>Welcome (back), {this.props.current_user.first_name}! 
+                    </ul>  
                 }
-                </ul>
                     
                     { noUserLoggedIn 
                         ?  
+                        <ul className="navbar-nav ml-auto">
                             <Link to='/signin'>Login</Link>
+                        </ul>
                          
                         : (
                             isCustomer 
                             ?   <ul className='navbar-nav ml-auto'>
                                     <Link to='/peep-profile'><p className="my-2 my-sm-0 ml-3">My profile</p></Link> 
-                                    <li></li><Link to='/basket'><i className="fas fa-shopping-basket"></i></Link>
+                                    <div ref={ref => this.el = ref}>
+                                        <i className='fas fa-shopping-basket' onClick={() => this.setState({ isPaneOpen: true })}></i>
+                                        <SlidingPane
+
+                                            className='some-custom-class'
+                                            overlayClassName='some-custom-overlay-class'
+                                            isOpen={ this.state.isPaneOpen }
+                                            title='Hey, it is optional pane title.  I can be React component too.'
+                                            width='400px'
+                                            subtitle='Basket'
+                                            onRequestClose={ () => {
+                                                // triggered on "<" on left top click or on outside click
+                                                this.setState({ isPaneOpen: false });
+                                            } }>
+                                            <div id='panel-content' style={{ marginTop: '32px'}}>
+                                                <h5>Your basket</h5>
+                                                <br />
+                                                <Basket 
+                                                    current_user={this.props.current_user}
+                                                    basket_id={this.props.basket_id}
+                                                    customerBasket={this.props.customerBasket}
+                                                    deleteProduct={this.props.deleteProduct}
+                                                />
+                                                <button className='btn btn-sm'>Checkout</button>
+                                            </div>
+                                            
+                                        </SlidingPane>
+                                    </div>
+                                    {/* <li><Link to='/basket'><i className="fas fa-shopping-basket"></i></Link></li> */}
                                     <button onClick={this.props.signout} className="btn btn-outline-orange btn-md my-2 my-sm-0 ml-3"          
                                     type="submit">Logout
                                     </button>

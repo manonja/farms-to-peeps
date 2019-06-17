@@ -71,10 +71,6 @@ class App extends Component {
         .then(allProducts => this.setState({allProducts}))
   }
 
-  // distinct = (value, index, self) => {
-  //   return self.indexOf(value) === index
-  // }
-
   getProductCategories = async () => {
     API.getCategories()
       .then(productCategories => this.setState({productCategories}))
@@ -128,8 +124,8 @@ class App extends Component {
   }
   
   deleteProduct = (id, basket_id) => {
-    console.log('id:', id, 'basket_id:', basket_id.basket_id )
-    API.removeProductFromBasket(id, basket_id.basket_id)
+    console.log('id:', id, 'basket_id:', basket_id )
+    API.removeProductFromBasket(id, basket_id)
       .then(this.removeFromBasket(id))
   }
 
@@ -171,14 +167,21 @@ class App extends Component {
                   }
               }
           })
-    }
+  }
 
   render() { 
     const {signin, signup, signout, addToFarmerProducts, removeProduct, addToBasket, deleteProduct, filterProducts, handleFilterCategory, handleAllCategories } = this
     const {current_user, user_type, farmerProducts, customerBasket, allProducts, basket_id, productCategories, filterCategory} = this.state
     return ( 
       <div className="app-container">
-        <Header current_user={current_user} user_type={user_type} signout={signout} />
+        <Header 
+          current_user={current_user} 
+          user_type={user_type} 
+          signout={signout}
+          customerBasket={customerBasket}
+          basket_id={basket_id}
+          deleteProduct={deleteProduct} 
+        />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/signin' component={props => <Signin {...props} signin={signin}/>} />
@@ -188,6 +191,7 @@ class App extends Component {
             component={props => <CustomerProfile {...props} 
             current_user={current_user}
             customerBasket={customerBasket}
+            basket_id={basket_id}
             deleteProduct={deleteProduct}/>}
           />
            <Route 
