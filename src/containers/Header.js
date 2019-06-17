@@ -34,32 +34,26 @@ class Header extends Component {
             </button>
     
             <div className="collapse navbar-collapse" id="navbar-header">
-                <ul className="navbar-nav mr-auto shop">
-                        <Link to='/products'><p className="shop">Shop</p></Link>
-                        <Link to='/'><p className="shop">About</p></Link>
+                <ul className="navbar-nav mr-auto about">
+                        <Link to='/'><p className="about">About</p></Link>
                 </ul>
                                    
                 
                 {   
-                    !this.props.current_user  
-                    ?    
-                    <ul className='navbar-nav mr-auto'><Link to='/signup'>REGISTER</Link> 
-                    </ul> 
-                        
-                    : 
-                    <ul className='navbar-nav mx-auto'>Welcome (back), {this.props.current_user.first_name}! 
-                    </ul>  
+                    this.props.current_user  && <ul className='navbar-nav mx-auto'>Welcome (back), {this.props.current_user.first_name}! </ul>  
                 }
                     
                     { noUserLoggedIn 
                         ?  
                         <ul className="navbar-nav ml-auto">
-                            <Link to='/signin'>Login</Link>
+                            <Link to='/signup'>Register | </Link>
+                            <Link to='/signin'> | Login</Link>
                         </ul>
                          
                         : (
                             isCustomer 
                             ?   <ul className='navbar-nav ml-auto'>
+                                    <Link to='/products'><p className="shop">Shop</p></Link>
                                     <Link to='/peep-profile'><p className="my-2 my-sm-0 ml-3">My profile</p></Link> 
                                     <div className='panel-icon' ref={ref => this.el = ref}>
                                         <i className='fas fa-shopping-basket' onClick={() => this.setState({ isPaneOpen: true })}></i>{itemNumber}
@@ -93,18 +87,16 @@ class Header extends Component {
                                             </div>       
                                         </SlidingPane>
                                     </div>
-                                    {/* <div className>{itemNumber}</div> */}
-                                    <button onClick={this.props.signout} className="btn btn-outline-orange btn-md my-2 my-sm-0 ml-3"          
+                                    <button onClick={this.props.signout} className="btn btn-outline-orange btn-sm my-2 my-sm-0 ml-3"          
                                     type="submit">Logout
                                     </button>
                                 </ul>
                             :  <ul className='navbar-nav ml-auto'>
-                                    <li>
-                                        <Link to='/farmer-profile'><button className="btn btn-outline-dark btn-md my-2 my-sm-0 ml-3">My profile</button></Link> 
-                                    </li>
-                                    <li> <button onClick={this.props.signout} className="btn btn-outline-green btn-md my-2 my-sm-0 ml-3"          type="submit">Logout
-                                        </button>
-                                    </li>
+                                        <Link to='/farmer-profile'><p>My profile</p></Link> 
+                                    <button onClick={this.props.signout} className="btn btn-outline-orange btn-sm my-6 my-sm-2 ml-3"          
+                                    type="submit">Logout
+                                    </button>
+                                    
                                 </ul>
                         )
      

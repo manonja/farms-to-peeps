@@ -8,7 +8,8 @@ class ProductForm extends Component {
         price: 0,
         quantity: '',
         url_img: '',
-        category: ''
+        category: '', 
+        farm: ''
     }
 
     handleChange = e => {
@@ -17,7 +18,7 @@ class ProductForm extends Component {
     }
 
     handleSubmit = () => {
-        const {name, price, quantity, url_img} = this.state
+        const {name, price, quantity, url_img, farm, category} = this.state
         const id = this.props.current_user.farmer_id
         
         let product = {
@@ -27,6 +28,8 @@ class ProductForm extends Component {
             url_img: url_img, 
             farmer_id: id
         }
+
+       
 
         API.createProduct(product)
             .then(product => this.props.addToFarmerProducts(product));    
@@ -78,6 +81,17 @@ class ProductForm extends Component {
                         className="form-control mb-4" 
                         placeholder="category" 
                     />
+
+                    <input 
+                        name='farm' 
+                        onChange={this.handleChange} 
+                        value={this.state.farm} 
+                        className="form-control mb-4" 
+                        placeholder="farm" 
+                    />
+
+
+                    
                
                     <button className="btn btn-block btn-outline-orange btn-lg" onClick={this.handleSubmit}  type="submit">Add my product!</button>
     

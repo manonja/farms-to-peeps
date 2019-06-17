@@ -34,16 +34,19 @@ body,
   background-size: cover;
 }
 
-.shop {
+/* .about {
   padding-top: 1%;
-}
+} */
 
 .panel-icon {
-  padding-left: 5%;
-  padding-right: 3%;
+  padding-left: 3%; 
+  margin-top: 2%;
   color: orangered;
+  vertical-align: baseline !important;
   font-weight: 500;
+  display: inline-block
 }
+
 
 .fa-shopping-basket {
   font-size: 2em;
@@ -70,8 +73,6 @@ body,
 #checkout-btn {
     text-align: center;
 }
-
-
 
 .right {
   position: absolute;
@@ -161,21 +162,22 @@ h2 {
 
 .navbar-brand {
   flex: 1 1 auto;
-  margin-top: 5%;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
 }
 
 a {
-  margin: 5px;
+  margin: 12px 0 0 0;
   color: #000 !important;
   text-decoration: none;
 }
 
 a:hover {
   color: #000;
-  font-weight: bold;
+  cursor: pointer;
+
+  /* font-weight: bold; */
 
 }
 
