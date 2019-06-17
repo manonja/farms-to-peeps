@@ -6,8 +6,11 @@ class Basket extends Component {
   
     render() { 
         const {customerBasket} = this.props
+        const subtotal = customerBasket.map(el => el.price).reduce((a, b) => a + b, 0)
+        const deliveryFee = 4.00
+        const totalPrice = subtotal + deliveryFee
         const product = customerBasket.map(product => (
-            <ol>
+
                 <BasketCard 
                     key={product.id}
                     product={product}
@@ -15,11 +18,18 @@ class Basket extends Component {
                     basket_id={this.props.basket_id}
                 />
                
-            </ol>
+            
         ))
         return (
             <div id ='panel-content'>
                 {product} 
+                <hr/>
+                <div id='summary-content'>
+                    <p><i>Subtotal: £{subtotal}</i></p>
+                    <p><i>Delivery Fee: £{deliveryFee}</i></p>
+                    <p><b>Total: £{totalPrice}</b></p>
+                </div>
+                <hr/>
                 <div id='checkout-btn'>
                     <button className='btn btn-md'>Checkout</button>
                 </div>

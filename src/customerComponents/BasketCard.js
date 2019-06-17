@@ -12,7 +12,7 @@ class BasketCard extends Component {
             <div id='basket-products' >
                 <p className="font-weight-bold">{name}</p>
                 <p className="right">£{price}</p>
-                <p onClick={() => this.props.deleteProduct(id, basket_id)}>Delete</p>
+                <p id='delete-from-checkout' onClick={() => this.props.deleteProduct(id, basket_id)}><i>Delete</i></p>
             </div>
         )
     }

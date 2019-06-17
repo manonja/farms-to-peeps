@@ -58,9 +58,19 @@ body,
   margin-top: 32px;
 }
 
+#delete-from-checkout:hover {
+  cursor: pointer;
+  color: orangered;
+}
+
+#summary-content {
+  text-align: center;
+}
+
 #checkout-btn {
     text-align: center;
 }
+
 
 
 .right {
