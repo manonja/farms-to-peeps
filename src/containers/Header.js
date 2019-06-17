@@ -19,10 +19,9 @@ class Header extends Component {
     }
     
     render() { 
-
+        const itemNumber = this.props.customerBasket.length
         const noUserLoggedIn = !this.props.current_user
         const isCustomer = this.props.current_user && this.props.user_type === 'customer'
-        
         
         return ( 
             <nav className="navbar navbar-expand-lg sticky-top scrolling-navbar ">
@@ -62,8 +61,8 @@ class Header extends Component {
                             isCustomer 
                             ?   <ul className='navbar-nav ml-auto'>
                                     <Link to='/peep-profile'><p className="my-2 my-sm-0 ml-3">My profile</p></Link> 
-                                    <div ref={ref => this.el = ref}>
-                                        <i className='fas fa-shopping-basket' onClick={() => this.setState({ isPaneOpen: true })}></i>
+                                    <div className='panel-icon' ref={ref => this.el = ref}>
+                                        <i className='fas fa-shopping-basket' onClick={() => this.setState({ isPaneOpen: true })}></i>{itemNumber}
                                         <SlidingPane
 
                                             className='some-custom-class'
@@ -76,21 +75,25 @@ class Header extends Component {
                                                 // triggered on "<" on left top click or on outside click
                                                 this.setState({ isPaneOpen: false });
                                             } }>
-                                            <div id='panel-content' style={{ marginTop: '32px'}}>
-                                                <h5>Your basket</h5>
-                                                <br />
-                                                <Basket 
-                                                    current_user={this.props.current_user}
-                                                    basket_id={this.props.basket_id}
-                                                    customerBasket={this.props.customerBasket}
-                                                    deleteProduct={this.props.deleteProduct}
-                                                />
-                                                <button className='btn btn-sm'>Checkout</button>
+                                            <div id='panel-title'>
+                                                <h5>My basket</h5>
                                             </div>
-                                            
+                                            <div id='panel-content'>
+                                                <br />
+                                                { !this.props.customerBasket 
+                                                    ? `Your basket is currently empty`
+                                                    :   <Basket 
+                                                            current_user={this.props.current_user}
+                                                            basket_id={this.props.basket_id}
+                                                            customerBasket={this.props.customerBasket}
+                                                            deleteProduct={this.props.deleteProduct}
+                                                        />
+                                                }
+                                                < br />
+                                            </div>       
                                         </SlidingPane>
                                     </div>
-                                    {/* <li><Link to='/basket'><i className="fas fa-shopping-basket"></i></Link></li> */}
+                                    {/* <div className>{itemNumber}</div> */}
                                     <button onClick={this.props.signout} className="btn btn-outline-orange btn-md my-2 my-sm-0 ml-3"          
                                     type="submit">Logout
                                     </button>
