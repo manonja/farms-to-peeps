@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 import API from '../data/API'
 
@@ -9,8 +10,10 @@ class ProductForm extends Component {
         quantity: '',
         url_img: '',
         category: '', 
-        farm: ''
+        farm: ''    
     }
+
+  
 
     handleChange = e => {
         e.preventDefault()
@@ -74,6 +77,7 @@ class ProductForm extends Component {
                         className="form-control mb-4" 
                         placeholder="paste your image url here!" 
                     />
+                 
                     <input 
                         name='category' 
                         onChange={this.handleChange} 
