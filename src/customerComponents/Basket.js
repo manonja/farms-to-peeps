@@ -7,15 +7,24 @@ class Basket extends Component {
     render() { 
         const {customerBasket} = this.props
         const product = customerBasket.map(product => (
-            <BasketCard 
-                key={product.id}
-                product={product}
-                deleteProduct={this.props.deleteProduct}
-                basket_id={this.props.basket_id}
-            />
+            <ol>
+                <BasketCard 
+                    key={product.id}
+                    product={product}
+                    deleteProduct={this.props.deleteProduct}
+                    basket_id={this.props.basket_id}
+                />
+               
+            </ol>
         ))
         return (
-            <div className= 'productCollection'> {product} </div>
+            <div id ='panel-content'>
+                {product} 
+                <div id='checkout-btn'>
+                    <button className='btn btn-md'>Checkout</button>
+                </div>
+            </div>
+
         )
     }
 }

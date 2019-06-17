@@ -4,7 +4,6 @@ import ProductCard from './ProductCard'
 
 class ProductCollection extends Component  {
 
-
     render() {
         const {allProducts, filterCategory, filterProducts} = this.props
 
