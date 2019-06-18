@@ -125,7 +125,6 @@ class App extends Component {
   }
   
   deleteProduct = (id, basket_id) => {
-    console.log('id:', id, 'basket_id:', basket_id )
     API.removeProductFromBasket(id, basket_id)
       .then(this.removeFromBasket(id))
   }
