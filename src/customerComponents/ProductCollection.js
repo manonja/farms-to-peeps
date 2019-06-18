@@ -6,6 +6,7 @@ class ProductCollection extends Component  {
 
     render() {
         const {allProducts, filterCategory, filterProducts} = this.props
+        console.log(allProducts)
 
         const product = 
             filterCategory === ''

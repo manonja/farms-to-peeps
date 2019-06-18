@@ -36,6 +36,7 @@ class App extends Component {
       await this.defUserType()
    
       if (this.state.user_type === 'customer') {
+        this.getCustomerData()
         this.props.history.push('/products')
       } else if (this.state.user_type === 'farmer') {
         this.props.history.push('/farmers')
@@ -124,7 +125,6 @@ class App extends Component {
   }
   
   deleteProduct = (id, basket_id) => {
-    console.log('id:', id, 'basket_id:', basket_id )
     API.removeProductFromBasket(id, basket_id)
       .then(this.removeFromBasket(id))
   }
@@ -163,7 +163,6 @@ class App extends Component {
                     this.getCustomerData()
                     this.getAllProducts()
                     this.getProductCategories()
-
                   }
               }
           })
@@ -181,6 +180,8 @@ class App extends Component {
           customerBasket={customerBasket}
           basket_id={basket_id}
           deleteProduct={deleteProduct} 
+          farmerProducts={farmerProducts}
+          addToFarmerProducts={addToFarmerProducts} 
         />
         <Switch>
           <Route exact path='/' component={HomePage} />

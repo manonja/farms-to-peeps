@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 class AccountDetails extends Component {
-    state = {  }
+    state = { 
+        
+    }
     render() { 
         return (
             

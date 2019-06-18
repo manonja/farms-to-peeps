@@ -26,26 +26,24 @@ class HomePage extends Component {
                         <h2 className="mb-5 font-weight-bold">How it works?</h2>
                         <div className="row d-flex justify-content-center mb-4">
                             <div className="col-md-8">
-                                <p className='grey-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi voluptate hic provident nulla repellat
-                                    facere esse molestiae ipsa labore porro minima quam quaerat rem, natus repudiandae debitis est
-                                    sit pariatur.</p>
+                                <p className='grey-text'>Farms to peeps is a online farmer's market. As a farmer you can sell your products. As a peep, you have access to artisanal and fresh produces online. Let's dive in.  </p>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md-4 mb-1">
                                 <i className="fas fa-carrot"></i>
                                 <h4 className="my-4">Farmers</h4>
-                                <p>Are you a farmer? You can now put your products online and connect with local consumers.</p>
+                                <p>Are you a farmer? Sell your products online. Connect with local consumers. Spread your goods!</p>
                             </div>
                             <div className="col-md-4 mb-1">
                                 <i className="fas fa-heart"></i>
                                 <h4 className="my-4">People</h4>
-                                <p>Do you want to eat local but don't have time to go to farmer's markets? No problem! You can buy online directly from farmers.</p>
+                                <p>Discover new ingredients, nourish your body & mind, get creative in the kitchen and enjoy convenient home delivery</p>
                             </div>
                             <div className="col-md-4 mb-1">
                                 <i className="fas fa-users"></i>
-                                <h4 className="my-4">Community</h4>
-                                <p>Our hope is to grow a conscious community and shape a more sustainable world together!</p>
+                                <h4 className="my-4">Build a conscious community</h4>
+                                <p>Eat local. Reduce your carbon print. Be a conscious human being for the planet. Be close to your values.</p>
                             </div>
                         </div>
                     </section>
@@ -79,7 +77,7 @@ class HomePage extends Component {
                                 <div className="mask rgba-white-slight"></div>
                                 </a>
                             </div>
-                            <h4 className="my-4 font-weight-bold">Fresh</h4>
+                            <h4 className="my-4 font-weight-bold">Home deliveries</h4>
                             <p className="grey-text"></p>
                             </div>
                         </div>

@@ -6,7 +6,6 @@ html,
 body,
 #intro {
     height: 100%;
-    
   }
 
 .App-link {
@@ -43,6 +42,11 @@ body,
   font-weight: 500;
   display: inline-block
 }
+
+.logout {
+  padding-left: 5% !important;
+}
+
 
 
 .fa-shopping-basket {
@@ -98,10 +102,36 @@ h2 {
   height: 40px !important; /*i assume your navbar size 100px*/
   padding: 0  !important;
   justify-content: center;
+  font-family: "Lato", Courier, monospace;
+
 }
 
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
-#product-category {
+.sale-content {
+  right: 0;
+  background-color:white;
+  padding-top: 10%;
+  text-align: center;
+}
+
+.image-container {
+  background-image: url('https://images.unsplash.com/photo-1526399743290-f73cb4022f48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+a#product-category {
   float: left;
   display: block !important;
   color: white !important;
@@ -109,12 +139,37 @@ h2 {
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
-  width: 5%; 
-  text-align: center; /* If you want the text to be centered */
+  width: 8%; 
+  margin-top: 0%;
+  text-align: center;
+  font-family: "Lato", Courier, monospace !important;
+  /* If you want the text to be centered */
 }
 
-#product-category-navbar li a:hover {
-  font-size: 20px;
+#register-login-link {
+  margin-bottom: 1%;
+  right: 0 !important;
+}
+
+a#register, a#login, a#shop, a#about, a#profile, a#shop2 {
+  /* width: 100%; */
+  padding-left: 10%;
+  font-family: "Lato", Courier, monospace;
+
+}
+
+
+a#farmer-profile {
+  padding-left: 5%;
+}
+
+a#profile {
+  padding-right: 3%;
+}
+
+#sale-container {
+  text-align: center;
+  padding-top: 10%;
 }
 
 /* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
@@ -164,6 +219,19 @@ h2 {
   font-weight: bold;
 }
 
+p.navbar-brand {
+  margin-left: 15%;
+  font-size: 1.5em;
+  font-family: "Lato", Courier, monospace;
+
+}
+
+#welcome-user{
+  font-family: "Lato", Courier, monospace;
+  font-size: 25px;
+  padding-left: 20%;
+}
+
 #signin-form-container {
   background: url('https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -197,7 +265,25 @@ h2 {
   padding-right: 10%;
   padding-bottom: 20%;
   margin-left: 25% !important;
-  /* font-weight: bold; */
+}
+
+#product-form-container {
+  background: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1231&q=80')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+#product-form {
+  width: 40%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 20%;
+  margin: 0 auto;
+  color:white;
 }
 
 #select-user-type {
@@ -208,17 +294,16 @@ h2 {
 }
 
 a {
-  margin: 12px 0 0 0;
+  margin: 13px 0 0 0;
   color: #000 !important;
   text-decoration: none;
+  font-family: "Lato", Courier, monospace;
+
 }
 
 a:hover {
   color: #000;
   cursor: pointer;
-
-  /* font-weight: bold; */
-
 }
 
 #LoginFormEmail{
@@ -274,24 +359,40 @@ a:hover {
 }
 
 /* Sidebar links */
-.sidebar a {
+.sidebar p {
   display: block;
-  color: white;
-  font-weight: 400;
+  color: orangered;
+  font-weight: bold;
   padding: 16px;
   text-decoration: none;
+  font-family: "Lato", Courier, monospace;
+
 }
+
+#profile-container {
+  /* background: url('https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-top:0 !important; */
+}
+
+#profile-components {
+  background: url('https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width:100 !important;}
 
 /* Active/current link */
-.sidebar a.active {
-  background-color: orange;
-  color: white;
-}
+
 
 /* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color:  rgb(252, 194, 87);
-  color: white;
+.sidebar p:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
@@ -308,13 +409,13 @@ div.content {
     height: auto;
     position: relative;
   }
-  .sidebar a {float: left;}
+  .sidebar p {float: left;}
   div.content {margin-left: 0;}
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
-  .sidebar a {
+  .sidebar p {
     text-align: center;
     float: none;
   }
