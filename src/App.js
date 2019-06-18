@@ -36,6 +36,7 @@ class App extends Component {
       await this.defUserType()
    
       if (this.state.user_type === 'customer') {
+        this.getCustomerData()
         this.props.history.push('/products')
       } else if (this.state.user_type === 'farmer') {
         this.props.history.push('/farmers')
@@ -110,6 +111,7 @@ class App extends Component {
       .then(resp => resp.json())
       .then(data => {
         if (data.basket){
+          console.log(data.basket)
           this.setState({customerBasket:  data.basket.products, basket_id: data.basket.id})
         } else {
           API.createCustomerBasket(customer)
@@ -163,7 +165,6 @@ class App extends Component {
                     this.getCustomerData()
                     this.getAllProducts()
                     this.getProductCategories()
-
                   }
               }
           })

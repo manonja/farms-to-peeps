@@ -7,8 +7,8 @@ class Basket extends Component {
     render() { 
         const {customerBasket} = this.props
         const subtotal = customerBasket.map(el => el.price).reduce((a, b) => a + b, 0)
-        const deliveryFee = 4.00
-        const totalPrice = subtotal + deliveryFee
+        const deliveryFee = 4
+        const totalPrice = (subtotal + deliveryFee).toFixed(2)
         const product = customerBasket.map(product => (
 
                 <BasketCard 

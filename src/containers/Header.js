@@ -35,20 +35,22 @@ class Header extends Component {
     
             <div className="collapse navbar-collapse" id="navbar-header">
                 <ul className="navbar-nav mr-auto about">
-                        <Link to='/'><p className="about">About</p></Link>
                 </ul>
                                    
                 
                 {   
-                    this.props.current_user  && <ul className='navbar-nav mx-auto'>Welcome (back), {this.props.current_user.first_name}! </ul>  
+                    this.props.current_user  && <ul id='welcome-user' className='navbar-nav mx-auto'>Welcome, {this.props.current_user.first_name}! </ul>  
                 }
                     
                     { noUserLoggedIn 
-                        ?  
-                        <ul className="navbar-nav ml-auto">
-                            <Link to='/signup'>Register | </Link>
-                            <Link to='/signin'> | Login</Link>
-                        </ul>
+                        ?  <div id='register-login-link'>
+                                <ul className="navbar-nav ml-auto">
+                                    <Link to='/' id="about">About</Link>
+                                    <Link to='/products' id='shop'> Shop</Link>
+                                    <Link to='/signup' id='register'>Register  </Link>
+                                    <Link to='/signin' id='login'> Login</Link>
+                                </ul>
+                            </div>
                          
                         : (
                             isCustomer 
@@ -58,7 +60,6 @@ class Header extends Component {
                                     <div className='panel-icon' ref={ref => this.el = ref}>
                                         <i className='fas fa-shopping-basket' onClick={() => this.setState({ isPaneOpen: true })}></i>{itemNumber}
                                         <SlidingPane
-
                                             className='some-custom-class'
                                             overlayClassName='some-custom-overlay-class'
                                             isOpen={ this.state.isPaneOpen }
