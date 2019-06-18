@@ -103,13 +103,13 @@ h2 {
 
 #product-category {
   float: left;
-  display: block;
+  display: block !important;
   color: white !important;
   text-transform: lowercase;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
-  /* width: 30%;  */
+  width: 5%; 
   text-align: center; /* If you want the text to be centered */
 }
 
