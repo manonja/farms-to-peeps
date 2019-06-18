@@ -37,8 +37,11 @@ class App extends Component {
    
       if (this.state.user_type === 'customer') {
         this.getCustomerData()
+        this.getAllProducts()
+        this.getProductCategories()
         this.props.history.push('/products')
       } else if (this.state.user_type === 'farmer') {
+        this.getFarmerData()
         this.props.history.push('/farmers')
 
       } else {
