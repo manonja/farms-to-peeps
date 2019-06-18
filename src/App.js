@@ -38,7 +38,7 @@ class App extends Component {
       if (this.state.user_type === 'customer') {
         this.props.history.push('/products')
       } else if (this.state.user_type === 'farmer') {
-        this.props.history.push('/farmer-profile')
+        this.props.history.push('/farmers')
 
       } else {
         this.props.history.push('/')

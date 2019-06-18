@@ -9,6 +9,7 @@ class Signin extends Component {
         current_user: ''  
     }
 
+
     handleSubmit = (e) => {
         e.preventDefault()
         API.signin(this.state)
@@ -33,18 +34,18 @@ class Signin extends Component {
     render() { 
         return ( 
 // <!-- Default form login -->
-            <div>
-                <form className="text-center border border-light p-5">
-                <h3>RETURNING USER</h3>
-
-                    
+            <div id='signin-form-container'>
+                <form id='signin-form' className="text-center">
+                <h2><b>RETURNING USER</b></h2>
                     <h2 className="h4 mb-4">Sign in</h2>
+                    <br></br>
+
                     <input 
                         name='email' 
                         id="defaultLoginFormEmail" 
                         onChange={this.handleChange} 
                         value={this.state.email} 
-                        className="form-control mb-4" 
+                        className="form-control mb-2 " 
                         placeholder="email" 
                     />
                     <input 
@@ -59,13 +60,7 @@ class Signin extends Component {
                  
                     <button className="btn btn-outline-orange btn-lg " onClick={(e) => this.handleSubmit(e)}> Sign me in! </button>
                 </form>
-                <form className="text-center border border-light p-5">
-
-                    <h3>NEW USER</h3>
-                    <h2 className="h4 mb-4">Register</h2>
-                    <h5>By creating an account with us, you will be able to move through the checkout process faster and view your orders.</h5>
-                        <Link to='/signup'><button className="btn btn-outline-orange btn-lg ">Create an account</button></Link>
-                </form>
+              
             </div>
             );
     }

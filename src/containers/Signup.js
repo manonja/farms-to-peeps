@@ -45,74 +45,79 @@ class Signup extends Component {
     render() {
         return (  
             // <!-- Default form login -->
-            <div>
-                  <form className="text-center border border-light p-5">
-    
-                    <p className="h4 mb-4">Sign up</p>
-    
-                    <input 
-                        name='first_name' 
-                        id="defaultSignup" 
-                        onChange={this.handleChange} 
-                        value={this.state.first_name} 
-                        className="form-control mb-4" 
-                        placeholder="first name" 
-                    />
+            <div id='signup-form-container'>
+                  <form id='signup-form' className="text-center ">
 
-                    <input 
-                        name='last_name' 
-                        id="defaultSignup" 
-                        onChange={this.handleChange} 
-                        value={this.state.last_name} 
-                        className="form-control mb-4" 
-                        placeholder="last name" 
-                    />
-                    <input 
-                        name='address' 
-                        id="defaultSignup" 
-                        onChange={this.handleChange} 
-                        value={this.state.address} 
-                        className="form-control mb-4" 
-                        placeholder="address" 
-                    />
-                    <input 
-                        name='email' 
-                        id="defaultSignup" 
-                        onChange={this.handleChange} 
-                        value={this.state.email} 
-                        className="form-control mb-4" 
-                        placeholder="email" 
-                    />
-                    <input 
-                        name='phone' 
-                        id="defaultSignup" 
-                        onChange={this.handleChange} 
-                        value={this.state.phone} 
-                        className="form-control mb-4" 
-                        placeholder="phone" 
-                    />
-                    <input 
-                        name='password' 
-                        type='password'
-                        id="defaultSignupPassword" 
-                        onChange={this.handleChange} 
-                        value={this.state.password} 
-                        className="form-control mb-4" 
-                        placeholder="Password" 
-                    />
-
+                  <h2>NEW USER</h2>
+                    <br></br>
                     <fieldset>
-                        <legend>Choose your people!</legend>
+                        {/* <legend>Step 1: Choose your people!</legend> */}
                         <div>
-                            <select onChange={this.handleUserType} value={this.state.value} >
+                            <select className="form-control mb-4" id='select-user-type' onChange={this.handleUserType} value={this.state.value} >
+                                <option disabled selected value> -- Select an option -- </option>
                                 <option value="farmer">I am a farmer</option>
                                 <option value="customer">I am a peep</option>
-                    </select>
-
+                            </select>
                         </div>
                     </fieldset>
-                
-    
+
+                    <br></br>
+
+                    <fieldset>
+                        {/* <legend>Step 2: Enter your details</legend> */}
+
+                        <input 
+                            name='first_name' 
+                            id="defaultSignup" 
+                            onChange={this.handleChange} 
+                            value={this.state.first_name} 
+                            className="form-control mb-4" 
+                            placeholder="first name" 
+                        />
+
+                        <input 
+                            name='last_name' 
+                            id="defaultSignup" 
+                            onChange={this.handleChange} 
+                            value={this.state.last_name} 
+                            className="form-control mb-4" 
+                            placeholder="last name" 
+                        />
+                        <input 
+                            name='address' 
+                            id="defaultSignup" 
+                            onChange={this.handleChange} 
+                            value={this.state.address} 
+                            className="form-control mb-4" 
+                            placeholder="address" 
+                        />
+                        <input 
+                            name='email' 
+                            id="defaultSignup" 
+                            onChange={this.handleChange} 
+                            value={this.state.email} 
+                            className="form-control mb-4" 
+                            placeholder="email" 
+                        />
+                        <input 
+                            name='phone' 
+                            id="defaultSignup" 
+                            onChange={this.handleChange} 
+                            value={this.state.phone} 
+                            className="form-control mb-4" 
+                            placeholder="phone" 
+                        />
+                        <input 
+                            name='password' 
+                            type='password'
+                            id="defaultSignupPassword" 
+                            onChange={this.handleChange} 
+                            value={this.state.password} 
+                            className="form-control mb-4" 
+                            placeholder="Password" 
+                        />
+                    </fieldset>
+                  
                     <Link to='/signin'><button className="btn btn-block btn-outline-orange btn-lg" onClick={(e) => this.handleSubmit(e)}  type="submit">Sign me up!</button></Link>
     
                     </form>
