@@ -6,7 +6,8 @@ html,
 body,
 #intro {
     height: 100%;
-}
+    
+  }
 
 .App-link {
   color: #61dafb;
@@ -33,10 +34,6 @@ body,
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-/* .about {
-  padding-top: 1%;
-} */
 
 .panel-icon {
   padding-left: 3%; 
@@ -167,6 +164,49 @@ h2 {
   font-weight: bold;
 }
 
+#signin-form-container {
+  background: url('https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#signup-form-container {
+  background: url('https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#signin-form {
+  width: 80%;
+  padding-top: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 20%;
+  margin: 0 auto;
+  color:white;
+}
+
+#signup-form {
+  width: 80%;
+  padding-top: 10%;
+  padding-left: 30%;
+  padding-right: 10%;
+  padding-bottom: 20%;
+  margin-left: 25% !important;
+  /* font-weight: bold; */
+}
+
+#select-user-type {
+  height: 55px;
+  width: 40%;
+  margin: 0 auto;
+  text-align-last:center;
+}
+
 a {
   margin: 12px 0 0 0;
   color: #000 !important;
@@ -178,6 +218,18 @@ a:hover {
   cursor: pointer;
 
   /* font-weight: bold; */
+
+}
+
+#LoginFormEmail{
+  border-radius: 50px;
+  margin-bottom: 2%;
+
+}
+
+#LoginFormPassword{
+  border-radius: 50px;
+  margin-bottom: 2%;
 
 }
 

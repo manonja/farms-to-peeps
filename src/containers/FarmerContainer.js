@@ -36,7 +36,7 @@ class FarmerContainer extends Component {
                     : <div id='no-product-onsale'>
                         <h1><b>You don't currently have products on sale</b></h1>
                         <div className='panel-icon' ref={ref => this.el = ref}>
-                                        <button className='btn btn-lg' onClick={() => this.setState({ isPaneOpen: true })}>Add a new product</button>
+                                        <button className='btn btn-lg btn-outline-white' onClick={() => this.setState({ isPaneOpen: true })}>Add a new product</button>
                                         <SlidingPane
 
                                             className='product-form-panel'

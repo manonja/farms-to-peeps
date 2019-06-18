@@ -45,21 +45,16 @@ class Signup extends Component {
     render() {
         return (  
             // <!-- Default form login -->
-            <div>
-                  <form className="text-center border border-light p-5">
+            <div id='signup-form-container'>
+                  <form id='signup-form' className="text-center ">
 
-                  <h3>NEW USER</h3>
-                    <h5>By creating an account with us, you will be able to move through the checkout process faster and view your orders.</h5>
+                  <h2>NEW USER</h2>
                     <br></br>
-                    <h2 className="h4 mb-4">Signup</h2>
-                    <hr></hr>
-
-                    <br></br>
-
                     <fieldset>
-                        <legend>Step 1: Choose your people!</legend>
+                        {/* <legend>Step 1: Choose your people!</legend> */}
                         <div>
-                            <select onChange={this.handleUserType} value={this.state.value} >
+                            <select className="form-control mb-4" id='select-user-type' onChange={this.handleUserType} value={this.state.value} >
+                                <option disabled selected value> -- Select an option -- </option>
                                 <option value="farmer">I am a farmer</option>
                                 <option value="customer">I am a peep</option>
                             </select>
@@ -69,7 +64,7 @@ class Signup extends Component {
                     <br></br>
 
                     <fieldset>
-                        <legend>Step 2: Enter your details</legend>
+                        {/* <legend>Step 2: Enter your details</legend> */}
 
                         <input 
                             name='first_name' 

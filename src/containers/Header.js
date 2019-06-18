@@ -62,9 +62,7 @@ class Header extends Component {
                                             className='some-custom-class'
                                             overlayClassName='some-custom-overlay-class'
                                             isOpen={ this.state.isPaneOpen }
-                                            title='Hey, it is optional pane title.  I can be React component too.'
                                             width='400px'
-                                            subtitle='Basket'
                                             onRequestClose={ () => {
                                                 // triggered on "<" on left top click or on outside click
                                                 this.setState({ isPaneOpen: false });
