@@ -7,7 +7,7 @@ import ProductDetails from '../components/ProductDetails'
 
 class FarmerProfile extends Component {
     state = {
-        option: 'accountDetails'
+        option: ''
      }
  
      handleSelectOption = (e) => {
@@ -15,6 +15,7 @@ class FarmerProfile extends Component {
      }
  
      render() { 
+         console.log(this.state.option)
          const rendering = (option) => {
              if (option === 'accountDetails'){
                  return <AccountDetails current_user={this.props.current_user}/>
@@ -28,10 +29,10 @@ class FarmerProfile extends Component {
          return ( 
              <main className="mt-5" id='profile-container'>
                  <div className="sidebar">
-                     <a onClick={this.handleSelectOption}className="active" name='accountDetails'>Account Details</a>
-                     <a onClick={this.handleSelectOption} name='products'>Products</a>
-                     <a onClick={this.handleSelectOption} name='deliveries'>Deliveries</a>
-                     <a onClick={this.handleSelectOption} name='recurringCustomer'>Recurring Customer</a>
+                     <p onClick={this.handleSelectOption}className="profile-link" name='accountDetails'>Account Details</p>
+                     <p onClick={this.handleSelectOption} className='profile-link' name='products'>Products</p>
+                     <p onClick={this.handleSelectOption} className='profile-link' name='deliveries'>Deliveries</p>
+                     <p onClick={this.handleSelectOption} className='profile-link' name='recurringCustomer'>Recurring Customer</p>
                  </div>
                  <div id='profile-components' className="content">
                      {rendering(this.state.option)}

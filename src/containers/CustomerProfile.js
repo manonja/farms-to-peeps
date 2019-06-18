@@ -29,10 +29,10 @@ class CustomerProfile extends Component {
         return ( 
             <main className="mt-5" id='profile-container'>
                 <div className="sidebar">
-                    <a onClick={this.handleSelectOption}className="active" name='accountDetails'>Account Details</a>
-                    <a onClick={this.handleSelectOption} name='basket'>Basket</a>
-                    <a onClick={this.handleSelectOption} name='deliveries'>Deliveries</a>
-                    <a onClick={this.handleSelectOption} name='recurringItem'>Recurring Items</a>
+                    <p onClick={this.handleSelectOption}className="active" name='accountDetails'>Account Details</p>
+                    <p onClick={this.handleSelectOption} name='basket'>Basket</p>
+                    <p onClick={this.handleSelectOption} name='deliveries'>Deliveries</p>
+                    <p onClick={this.handleSelectOption} name='recurringItem'>Recurring Items</p>
                 </div>
                 <div id='profile-components' className="content">
                     {rendering(option)}

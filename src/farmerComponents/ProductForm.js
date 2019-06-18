@@ -43,10 +43,11 @@ class ProductForm extends Component {
     render() {
         return (  
             // <!-- Default form login -->
-            <div>
-                  <form className="text-center border border-light p-5">
+            <div id='product-form-container'>
+                    <h2 className="h4 mb-4">Enter a new product below</h2>
+
+                  <form id='product-form' className="text-center">
     
-                    <p className="h4 mb-4">Enter a new product below</p>
     
                     <input 
                         name='name' 
