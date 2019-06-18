@@ -89,7 +89,7 @@ class Header extends Component {
                                  
                                 </ul>
                             :  <ul className='navbar-nav ml-auto'>
-                                        <Link to='/sales' id="sales"><p>Sales</p></Link> 
+                                        <Link to='/farmers' id="sales"><p>Sales</p></Link> 
                                         <Link to='/farmer-profile' id='farmer-profile'><p>My profile</p></Link> 
                                     <button onClick={this.props.signout} className="btn btn-outline-orange btn-sm my-6 my-sm-2 ml-3"          
                                     type="submit">Logout

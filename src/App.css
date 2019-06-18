@@ -48,6 +48,7 @@ body,
 }
 
 
+
 .fa-shopping-basket {
   font-size: 2em;
 }
@@ -105,6 +106,30 @@ h2 {
 
 }
 
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sale-content {
+  right: 0;
+  background-color:white;
+  padding-top: 10%;
+  text-align: center;
+}
+
+.image-container {
+  background-image: url('https://images.unsplash.com/photo-1526399743290-f73cb4022f48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 a#product-category {
   float: left;
@@ -142,6 +167,10 @@ a#profile {
   padding-right: 3%;
 }
 
+#sale-container {
+  text-align: center;
+  padding-top: 10%;
+}
 
 /* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
 @media screen and (max-width: 500px) {

@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-
 import API from '../data/API'
 
 class ProductForm extends Component {
     state = {
         name: '',
-        price: 0,
+        price: '',
         quantity: '',
         url_img: '',
         category: '', 
-        farm: ''    
+        farm: 'Chalk Farm'    
     }
 
   
@@ -21,7 +19,7 @@ class ProductForm extends Component {
     }
 
     handleSubmit = () => {
-        const {name, price, quantity, url_img, farm, category} = this.state
+        const {name, price, quantity, url_img} = this.state
         const id = this.props.current_user.farmer_id
         
         let product = {
@@ -79,13 +77,13 @@ class ProductForm extends Component {
                         placeholder="paste your image url here!" 
                     />
                  
-                    <input 
+                    {/* <input 
                         name='category' 
                         onChange={this.handleChange} 
                         value={this.state.category} 
                         className="form-control mb-4" 
                         placeholder="category" 
-                    />
+                    /> */}
 
                     <input 
                         name='farm' 

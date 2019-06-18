@@ -3,25 +3,28 @@ import React, { Component } from 'react';
 class ProductCard extends Component {
 
     render() {
-        const {url_img, name, price, quantity, category} = this.props.product
+        const {url_img, name, price, quantity} = this.props.product
         console.log(this.props.product)
         
         return (
 
-            <div id='productCard' className="card card-cascade narrower">
-                <div className="view view-cascade overlay">
-                    <img className="img card-img-top" src={url_img} alt={name}/>
-                    <a><div className="mask rgba-white-slight"></div></a>
-                </div>
-                <div className="card-body card-body-cascade">
-                    <h5 className="pink-text pb-2 pt-1">{category}</h5>
-                    <h4 className="font-weight-bold card-title">{name}</h4>
-                    <p className="card-text">£{price}</p>
-                    <p className="card-text">{quantity}</p>
-                    <button onClick={() => this.props.removeProduct(this.props.product.id)} className="btn btn-unique" >Remove from sale</button>
-                </div>
-                <div className="card-footer text-muted text-center">Chalk Farm</div>
+            <div id='productCard' className="card card-cascade ">
+            <div className="card view view-cascade overlay">
+            <img className="card-img-top" src={url_img} alt={name}/>
+
             </div>
+
+            <div className="card-body ">
+                {/* <h5 className="grey-text pb-2 pt-1"> {category.name}</h5> */}
+                <h4  className="font-weight-bold card-title">{name}</h4>
+                <p className="card-text">£{price}</p>
+                <p className="card-text">{quantity}</p>
+                <p className="card-text">Chalk Farm</p>
+            </div>
+
+            <div className="card-footer text-muted text-center"><button onClick={() => this.props.removeProduct(this.props.product.id)} className="btn btn-orange" >Remove from sale</button>
+            </div>
+        </div>
         )
     }
 }

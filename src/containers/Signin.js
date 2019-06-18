@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
 import API from '../data/API'
 
 class Signin extends Component {
@@ -8,8 +7,7 @@ class Signin extends Component {
         password: '', 
         current_user: ''  
     }
-
-
+    
     handleSubmit = (e) => {
         e.preventDefault()
         API.signin(this.state)

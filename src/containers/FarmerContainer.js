@@ -21,44 +21,81 @@ class FarmerContainer extends Component {
     render() { 
         return ( 
             <div>
-                {/* <ProductForm
-                    farmerProducts={this.props.farmerProducts} 
-                    addToFarmerProducts={this.props.addToFarmerProducts}
-                    current_user={this.props.current_user}
-                /> */}
                 {
-                    this.props.farmerProducts[0] 
-                    ? 
-                    <ProductCollection
-                        farmerProducts={this.props.farmerProducts}
-                        removeProduct={this.props.removeProduct}
-                    />
+                    this.props.farmerProducts.length > 0
+
+                    ?
+
+                    <div>
+                        <div className='split image-container'>
+                        </div>
+                        <div className='panel-icon split sale-content' ref={ref => this.el = ref}>
+                            <h4>You have {this.props.farmerProducts.length} product(s) on sale</h4>
+                                <button className='btn btn-lg btn-outline-black' onClick={() => this.setState({ isPaneOpen: true })}>Add a new product</button>
+                                    <SlidingPane
+ 
+                                        className='product-form-panel'
+                                        overlayClassName='some-custom-overlay-class'
+                                        isOpen={ this.state.isPaneOpen }
+                                        from='bottom'
+                                        width='100%'
+                                        height='100%'
+                                        onRequestClose={ () => {
+                                            this.setState({ isPaneOpen: false });
+                                        } }>
+                                        <div id='panel-content'>
+
+                                            <br />
+                                            { 
+                                                <ProductForm  
+                                                    current_user={this.props.current_user} 
+                                                    farmerProducts={this.props.farmerProducts} 
+                                                    addToFarmerProducts={this.props.addToFarmerProducts}   
+                                                />
+                                            }
+                                            < br />
+                                        </div>       
+                                    </SlidingPane>
+                                    <ProductCollection
+                                        farmerProducts={this.props.farmerProducts}
+                                        removeProduct={this.props.removeProduct}
+                                    />
+                        </div>
+                                              
+                        
+                  
+                    </div>
+                   
                     : <div id='no-product-onsale'>
                         <h1><b>You don't currently have products on sale</b></h1>
-                        <div className='panel-icon' ref={ref => this.el = ref}>
-                                        <button className='btn btn-lg btn-outline-white' onClick={() => this.setState({ isPaneOpen: true })}>Add a new product</button>
-                                        <SlidingPane
+                       <div className='panel-icon' ref={ref => this.el = ref}>
+                            <button className='btn btn-lg btn-outline-white' onClick={() => this.setState({ isPaneOpen: true })}>Add a new product</button>
+                            <SlidingPane
 
-                                            className='product-form-panel'
-                                            overlayClassName='some-custom-overlay-class'
-                                            isOpen={ this.state.isPaneOpen }
-                                            from='bottom'
-                                            width='100%'
-                                            height='100%'
-                                            onRequestClose={ () => {
-                                                // triggered on "<" on left top click or on outside click
-                                                this.setState({ isPaneOpen: false });
-                                            } }>
-                                        
-                                            <div id='panel-content'>
-                                                <br />
-                                                { 
-                                                    <ProductForm />
-                                                }
-                                                < br />
-                                            </div>       
-                                        </SlidingPane>
-                                        </div>
+                                className='product-form-panel'
+                                overlayClassName='some-custom-overlay-class'
+                                isOpen={ this.state.isPaneOpen }
+                                from='bottom'
+                                width='100%'
+                                height='100%'
+                                onRequestClose={ () => {
+                                    // triggered on "<" on left top click or on outside click
+                                    this.setState({ isPaneOpen: false });
+                                } }>
+                            
+                                <div id='panel-content'>
+                                    <br />
+                                    { 
+                                        <ProductForm  
+                                            current_user={this.props.current_user} 
+                                            farmerProducts={this.props.farmerProducts} 
+                                            addToFarmerProducts={this.props.addToFarmerProducts}   
+                                        />
+                                    }
+                                    < br />
+                                </div>       
+                            </SlidingPane>
+                        </div>
                     </div>
                 }
 
