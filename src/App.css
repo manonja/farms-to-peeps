@@ -61,20 +61,21 @@ a:hover {
 
 #register, #login, #shop, #about {
   /* width: 100%; */
-  padding: 0 0.5em;
+  padding: 0 0.7em;
   font-family: "Lato", Courier, monospace;
+  font-size: 1.3em;
 }
 
 #farmer-profile, #sales {
-  padding: 0 0.5em;
+  padding: 0 0.7em;
 }
 
 #shop2 {
-  padding: 0 0.5em;
+  padding: 0 0.7em;
 }
 
 #profile {
-  padding: 0 0.5em
+  padding: 0 0.7em
 }
 
 a#logout {
@@ -96,6 +97,7 @@ a#logout {
   letter-spacing: 1px;
   font-weight: bold;
   font-size: 1.5em;
+  padding-left: 2%;
   font-family: "Lato", Courier, monospace;
 }
 
@@ -114,14 +116,15 @@ a#logout {
   padding: 0;
   margin: 0;
   display: flex;
-  align-items: center
+  align-items: center;
+  font-size: 1.2em;
 }
 
 #navbar-general {
   padding: 0;
   margin: 0;
   display: flex;
-  align-items: center
+  align-items: center;
 }
 
 #navbar-farmer {
