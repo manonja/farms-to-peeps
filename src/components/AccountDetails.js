@@ -7,11 +7,11 @@ class AccountDetails extends Component {
     render() { 
         return (
             
-            <div className='dbp-xs-12 dbp-sm-12 dbp-md-3 dbp-lg-3' id='personal-info'>
-                <h2 className="d-flex align-items-center justify-content-center">Account Details</h2>
+            <div id='personal-info'>
+                <h2 className="d-flex align-items-center justify-content-center account-details">Account Details</h2>
                 <form className='form'>
                     <div className='col-xs-12 col-sm-6 col-md-6'>
-                        <h3>Personal Info</h3>
+                        <h3><b>Personal Info</b></h3>
                         <div className='form-group'>
                             <label>First Name</label>
                             <input type='text' className='form-control' name='first_name' value={this.props.current_user.first_name}></input>
@@ -30,7 +30,7 @@ class AccountDetails extends Component {
                         </div>                      
                     </div>
                     <div className='col-xs-12 col-sm-6 col-md-6'>
-                        <h3>Delivery Address</h3>
+                        <h3><b>Delivery Adress</b></h3>
                         <div className='form-group'>
                             <label>Address</label>
                             <input type='text' className='form-control' name='first_name' value={this.props.current_user.address}></input>

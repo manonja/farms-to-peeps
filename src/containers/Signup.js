@@ -51,7 +51,6 @@ class Signup extends Component {
                   <h2>NEW USER</h2>
                     <br></br>
                     <fieldset>
-                        {/* <legend>Step 1: Choose your people!</legend> */}
                         <div>
                             <select className="form-control mb-4" id='select-user-type' onChange={this.handleUserType} value={this.state.value} >
                                 <option disabled selected value> -- Select an option -- </option>

@@ -37,11 +37,6 @@ class API {
         }).then(resp => resp.json())
     }
     
-    // static getBasket () {
-    //     return fetch(this.productsUrl, {
-    //         headers: {Authorization: localStorage.getItem('token')}
-    //     }).then(resp => resp.json())
-    //    }
 
     static getProducts () {
         return fetch(this.productsUrl)

@@ -11,32 +11,38 @@ class ProductForm extends Component {
         farm: 'Chalk Farm'    
     }
 
-  
+    handleCategory= e => {
+        const {category} = this.state
+        e.preventDefault()
+        this.setState({category: e.target.value}) 
+    }
 
     handleChange = e => {
         e.preventDefault()
         this.setState({ [e.target.name]: e.target.value})
     }
 
+    // define_category = (category) => {
+      
+
+    // }
+
     handleSubmit = () => {
         const {name, price, quantity, url_img} = this.state
         const id = this.props.current_user.farmer_id
-        
+
         let product = {
             name: name,
             price: price, 
             quantity: quantity,
             url_img: url_img, 
-            farmer_id: id
-        }
-
-       
+            farmer_id: id,
+            category: this.state.category
+          }  
 
         API.createProduct(product)
-            .then(product => this.props.addToFarmerProducts(product));    
+            .then(product => this.props.addToFarmerProducts(product))
     }
-
-
 
     render() {
         return (  
@@ -76,14 +82,6 @@ class ProductForm extends Component {
                         className="form-control mb-4" 
                         placeholder="paste your image url here!" 
                     />
-                 
-                    {/* <input 
-                        name='category' 
-                        onChange={this.handleChange} 
-                        value={this.state.category} 
-                        className="form-control mb-4" 
-                        placeholder="category" 
-                    /> */}
 
                     <input 
                         name='farm' 
@@ -93,9 +91,16 @@ class ProductForm extends Component {
                         placeholder="farm" 
                     />
 
+                    <div>
+                    <select className="form-control mb-4" id='select-product-category' onChange={this.handleCategory} value={this.state.value} >
+                        <option disabled selected value> -- Select a category -- </option>
+                        <option value="Vegetable">Vegetable</option>
+                        <option value="Fruit">Fruit</option>
+                        <option value="Bakery">Bakery</option>
 
-                    
-               
+                    </select>
+                        </div>
+                       
                     <button className="btn btn-block btn-outline-orange btn-lg" onClick={this.handleSubmit}  type="submit">Add my product!</button>
     
                 </form>

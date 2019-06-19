@@ -96,7 +96,7 @@ class HomePage extends Component {
                         </ol>
                         <div className="carousel-inner" role="listbox">
                             <div className="carousel-item active">
-                            <img className="d-block w-100" src="https://images.unsplash.com/photo-1470072768013-bf9532016c10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80" alt="First slide"/>
+                            <img className="d-block w-100" src="https://images.unsplash.com/photo-1469365897239-504fabc9b11b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80" alt="First slide"/>
                             </div>
                             <div className="carousel-item">
                             <img className="d-block w-100" src="https://images.unsplash.com/photo-1501620123930-c0eeb6d954a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Second slide"/>
