@@ -12,7 +12,6 @@ class ProductForm extends Component {
     }
 
     handleCategory= e => {
-        const {category} = this.state
         e.preventDefault()
         this.setState({category: e.target.value}) 
     }
@@ -21,11 +20,6 @@ class ProductForm extends Component {
         e.preventDefault()
         this.setState({ [e.target.name]: e.target.value})
     }
-
-    // define_category = (category) => {
-      
-
-    // }
 
     handleSubmit = () => {
         const {name, price, quantity, url_img} = this.state
@@ -49,10 +43,7 @@ class ProductForm extends Component {
             // <!-- Default form login -->
             <div id='product-form-container'>
                     <h2 className="h4 mb-4">Enter a new product below</h2>
-
                   <form id='product-form' className="text-center">
-    
-    
                     <input 
                         name='name' 
                         onChange={this.handleChange} 
