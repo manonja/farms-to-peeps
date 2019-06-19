@@ -7,7 +7,7 @@ class CustomerContainer extends Component {
 
     render() {  
         return ( 
-           <div>
+           <div id='products-container'>
                 <CategoriesBar
                     productCategories={this.props.productCategories} 
                     allProducts={this.props.allProducts}
@@ -16,6 +16,7 @@ class CustomerContainer extends Component {
                 />
                 <h3 id='customer-title' className="d-flex justify-content-center">Shop the goods! </h3>
                 <ProductCollection 
+                    current_user={this.props.current_user}
                     allProducts={this.props.allProducts}
                     addToBasket={this.props.addToBasket}
                     customerBasket={this.props.customerBasket}

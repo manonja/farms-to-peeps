@@ -21,6 +21,12 @@ body,
   }
 }
 
+/* Style the <hr> element */
+hr {
+  margin: auto;
+  width: 40%;
+}
+
 /* navbar */
 .logout {
   padding-left: 5% !important;
@@ -57,6 +63,7 @@ a {
 a:hover {
   color: #000;
   cursor: pointer;
+  font-weight: bold;
 }
 
 #register, #login, #shop, #about {
@@ -82,7 +89,6 @@ a#logout {
   color: orangered !important;
   font-weight: bold;
 }
-
 
 .naigation_bar {
   display: flex;
@@ -117,7 +123,7 @@ a#logout {
   margin: 0;
   display: flex;
   align-items: center;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 #navbar-general {
@@ -125,20 +131,21 @@ a#logout {
   margin: 0;
   display: flex;
   align-items: center;
+  font-size: 1.1em;
+
 }
 
 #navbar-farmer {
   padding: 0;
   margin: 0;
   display: flex;
-  align-items: center
+  align-items: center;
+  font-size: 1.1em;
+
 }
 
-
-
-
 /* images */
-.img {
+/* .img {
   position: relative;
   padding: 1%;
   float: left;
@@ -149,8 +156,7 @@ a#logout {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
+} */
 
 #delete-from-checkout:hover {
   cursor: pointer;
@@ -164,11 +170,19 @@ a#logout {
 #checkout-btn {
     text-align: center;
 }
-
+/* 
 .right {
   position: absolute;
   right: 10px;
   width: 100px;
+} */
+
+#products-container {
+  background-image: url('https://images.unsplash.com/photo-1428200698796-38743f953a43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #productCard {
@@ -192,7 +206,7 @@ a#logout {
 
 .sale-content {
   margin-top: 0;
-  padding-top: 15%;
+  padding-top: 10%;
   padding-left: 3%; 
   padding-bottom: 100%;
   text-align: center;
@@ -256,9 +270,12 @@ a#product-category {
   align-items: flex-start;
   justify-content: space-around;
   padding-right: 4%;
-  padding-left: 4%;
-  padding-top: 5%;
-    
+  padding-left: 4%;  
+}
+
+#preview-title {
+  color: grey !important;
+  text-align: center;
 }
 
 #signin-form-container {
@@ -296,24 +313,41 @@ a#product-category {
   margin-left: 25% !important;
 }
 
+#panel-content {
+  height: 100%;
+}
+
 #product-form-container {
   background: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1231&q=80')no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-top: 5%;
-  padding-left: 5%;
+  text-align: center;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#product-form {
-  width: 40%;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 20%;
-  margin: 0 auto;
-  color:white;
+#product-form-and-preview {
+  display: flex;
+  justify-content: center;
 }
+
+
+#product-form {
+  width: 30%;
+  color:white;
+  margin-left: 15%;
+  margin-right: 5%;
+
+}
+#preview-container {
+  width: 20%;
+  /* margin-left: 5% */
+}
+
 
 #select-user-type {
   height: 55px;
@@ -321,7 +355,6 @@ a#product-category {
   margin: 0 auto;
   text-align-last:center;
 }
-
 
 #LoginFormEmail{
   border-radius: 50px;
@@ -337,6 +370,8 @@ a#product-category {
 
 .product-form-panel {
   background-color: #61dafb;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7)
 
 }
 
@@ -348,6 +383,7 @@ a#product-category {
   -o-background-size: cover;
   background-size: cover;
   padding: 8%;
+  opacity: 0.9;
   }
 
 #no-product-onsale {
@@ -386,6 +422,7 @@ a#product-category {
 
 }
 
+/* User profile details */
 #profile-container {
   background: url('https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -399,93 +436,18 @@ a#product-category {
 
 .account-details {
   padding-bottom: 5%;
+  padding-left: 10%;
+
 }
 
 #personal-info {
   padding-top: 5%;
 
 }
-
-
-/* Links on mouse-over */
-.sidebar p:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
+  margin-left: 25%;
+  padding: 1px 20px;
   height: 1000px;
-}
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar p {float: left;}
-  div.content {margin-left: 0;}
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-  .sidebar p {
-    text-align: center;
-    float: none;
-  }
-}
-
-/* coming soon page from w3school */
-.bgimg {
-  /* Background image */
-  background-image: url('https://images.unsplash.com/photo-1498579397066-22750a3cb424?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
-  /* Full-screen */
-  height: 100%;
-  /* Center the background image */
-  background-position: center;
-  /* Scale and zoom in the image */
-  background-size: cover;
-  /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
-  position: relative;
-  /* Add a white text color to all elements inside the .bgimg container */
-  color: white;
-  /* Add a font */
-  font-family: "Courier New", Courier, monospace;
-  /* Set the font-size to 25 pixels */
-  font-size: 25px;
-}
-
-/* Position text in the top-left corner */
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
-
-/* Position text in the bottom-left corner */
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-}
-
-/* Position text in the middle */
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-/* Style the <hr> element */
-hr {
-  margin: auto;
-  width: 40%;
 }
 
 

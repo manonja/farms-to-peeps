@@ -37,9 +37,7 @@ class ProductCollection extends Component  {
 
         return (
             <div className= 'productCollection row align-items-stretch'> 
-
                 {product} 
-
             </div>
         )
     } 

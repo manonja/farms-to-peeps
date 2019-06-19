@@ -8,7 +8,7 @@ class AccountDetails extends Component {
         return (
             
             <div id='personal-info'>
-                <h2 className="d-flex align-items-center justify-content-center account-details">Account Details</h2>
+                <h2 className="d-flex align-items-center account-details">Account Details</h2>
                 <form className='form'>
                     <div className='col-xs-12 col-sm-6 col-md-6'>
                         <h3><b>Personal Info</b></h3>
