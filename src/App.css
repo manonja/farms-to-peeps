@@ -101,9 +101,9 @@ a#logout {
 .navbar-logo {
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: .1em;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.9em;
   padding-left: 2%;
   font-family: "Lato", Courier, monospace;
 }
@@ -112,6 +112,7 @@ a#logout {
   font-family: "Lato", Courier, monospace;
   font-size: 25px;
   margin: 0;
+  letter-spacing: .4em;
 }
 
 #nav-content {
@@ -177,13 +178,8 @@ a#logout {
   right: 10px;
   width: 100px;
 } */
-
 #products-container {
-  background-image: url('https://images.unsplash.com/photo-1469478187851-e252b5239de5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #686060;
 }
 
 #productCard {
@@ -196,6 +192,11 @@ a#logout {
 
 #customer-title {
   margin-top: 5%;
+  font-family: "Lato", Courier, monospace !important;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-size: 2em;
+
 }
 
 #product-category-navbar  {
@@ -228,11 +229,12 @@ a#product-category {
   text-transform: lowercase;
   text-decoration: none;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   width: 8%; 
   margin-top: 0%;
   text-align: center;
   font-family: "Lato", Courier, monospace !important;
+  letter-spacing: 0.1em;
   /* If you want the text to be centered */
 }
 
@@ -272,6 +274,7 @@ a#product-category {
   justify-content: space-around;
   padding-right: 4%;
   padding-left: 4%;  
+  padding-bottom: 100%;
 }
 
 #preview-title {

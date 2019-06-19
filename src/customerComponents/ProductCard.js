@@ -29,10 +29,9 @@ class ProductCard extends Component {
                     <img className="card-img-top" src={url_img} alt={name}/>
                 </div>
                 <div className="card-body ">
-                    <h5 className="grey-text pb-2 pt-1"> {category.name}</h5>
-                    <h4  className="font-weight-bold card-title">{name}</h4>
-                    <p className="card-text">£{price}</p>
-                    <p className="card-text">{quantity}</p>
+                    <p className="grey-text"> <i>{category.name}</i></p>
+                    <h5  className="font-weight-bold">{name}</h5>
+                    <p className="card-text">£{price} - <span>{quantity}</span></p>
                     <p className="card-text">Chalk Farm</p>
                 </div>
                 <div className="card-footer text-muted text-center"><button onClick={() => this.handleSubmit(id, this.props.product)} id='add-basket-btn' className="btn btn-outline-orange lighten-1">ADD TO BASKET</button>
