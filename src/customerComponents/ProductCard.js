@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import API from '../data/API'
 
-import {Link} from 'react-router-dom'
-
 class ProductCard extends Component {
 
     handleSubmit = (id, product) => {
@@ -19,24 +17,17 @@ class ProductCard extends Component {
         } else {
             API.addToCustomerBasket(productForApi)
             addToBasket(product);   
-        }    
-      
-        
-        
+        }       
     }
 
 
     render() {
         const {url_img, name, price, quantity, category, id} = this.props.product
-        console.log(this.props.product)
         return (
-
             <div id='productCard' className="card ">
                 <div className="card view view-cascade overlay">
-                <img className="card-img-top" src={url_img} alt={name}/>
-
+                    <img className="card-img-top" src={url_img} alt={name}/>
                 </div>
-
                 <div className="card-body ">
                     <h5 className="grey-text pb-2 pt-1"> {category.name}</h5>
                     <h4  className="font-weight-bold card-title">{name}</h4>
