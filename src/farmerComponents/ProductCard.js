@@ -8,7 +8,7 @@ class ProductCard extends Component {
         
         return (
 
-            <div id='productCard' className="card card-cascade ">
+            <div id='productCard' className="card">
             <div className="card view view-cascade overlay">
             <img className="card-img-top" src={url_img} alt={name}/>
 

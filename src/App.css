@@ -34,27 +34,28 @@ body,
   background-size: cover;
 }
 
-.panel-icon {
-  padding-left: 3%; 
-  margin-top: 2%;
-  color: orangered;
-  vertical-align: baseline !important;
-  font-weight: 500;
-  display: inline-block
-}
+
 
 .logout {
   padding-left: 5% !important;
 }
 
-
-
 .fa-shopping-basket {
+  padding-top: 2%;
   font-size: 2em;
+  color: orangered;
+
 }
 
 .fa-shopping-basket:hover {
   cursor: pointer;
+}
+
+.panel-icon {
+  font-size:1.3em;
+  font-weight: bold;
+  margin-top: 0;
+  padding-left: 2%;
 }
 
 #panel-title {
@@ -81,16 +82,12 @@ body,
   width: 100px;
 }
 
-h2 {
-  text-align: center;
-}
-
 #productCard {
   margin-top: 5%;
   width: auto;
-  max-width:  400px;
+  max-width:  500px;
   height: auto;
-  max-height: 500px;
+  max-height: 600px;
 
 }
 
@@ -106,29 +103,20 @@ h2 {
 
 }
 
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
 .sale-content {
-  right: 0;
-  background-color:white;
-  padding-top: 10%;
+  margin-top: 0;
+  padding-top: 20%;
+  padding-left: 3%; 
+  padding-bottom: 100%;
   text-align: center;
-}
-
-.image-container {
-  background-image: url('https://images.unsplash.com/photo-1526399743290-f73cb4022f48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80');
+  color:white;
+  font-weight: bold;
+  background-image: url('https://images.unsplash.com/photo-1540736086231-18770daec04e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 a#product-category {
@@ -146,25 +134,39 @@ a#product-category {
   /* If you want the text to be centered */
 }
 
+.card-body {
+  color: grey !important;
+}
+
 #register-login-link {
   margin-bottom: 1%;
   right: 0 !important;
 }
 
-a#register, a#login, a#shop, a#about, a#profile, a#shop2 {
+a#register, a#login, a#shop, a#about, a#profile {
   /* width: 100%; */
-  padding-left: 10%;
+  padding-right: 3%;
+  padding-bottom: 1% !important;
   font-family: "Lato", Courier, monospace;
 
 }
-
 
 a#farmer-profile {
   padding-left: 5%;
 }
 
+#shop2 {
+  padding-right: 5%;
+}
+
+a#logout {
+  padding-left:3%;
+  color: orangered !important;
+  font-weight: bold;
+}
+
 a#profile {
-  padding-right: 3%;
+  padding-left: 3%;
 }
 
 #sale-container {
@@ -195,6 +197,7 @@ a#profile {
   justify-content: space-around;
   padding-right: 4%;
   padding-left: 4%;
+  padding-top: 5%;
     
 }
 
@@ -370,23 +373,24 @@ a:hover {
 }
 
 #profile-container {
-  /* background: url('https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  margin-top:0 !important; */
+  width:100 !important;
+  margin-top:0 !important;
+  font-weight: bold;
 }
 
-#profile-components {
-  background: url('https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width:100 !important;}
+.account-details {
+  padding-bottom: 5%;
+}
 
-/* Active/current link */
+#personal-info {
+  padding-top: 5%;
+
+}
 
 
 /* Links on mouse-over */
@@ -468,15 +472,6 @@ div.content {
 hr {
   margin: auto;
   width: 40%;
-}
-
-#profile-components {
-  padding-left: 10%;
-
-}
-
-#personal-info {
-  padding-left: 5%;
 }
 
 

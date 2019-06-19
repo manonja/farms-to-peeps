@@ -51,10 +51,10 @@ class Header extends Component {
                          
                         : (
                             isCustomer 
-                            ?   <ul className='navbar-nav ml-auto'>
-                                    <Link to='/products' id="shop-2"><p>Shop</p></Link>
-                                    <Link to='/peep-profile' id="profile"><p>My profile</p></Link> 
-                                    <div className='panel-icon' ref={ref => this.el = ref}>
+                            ?   
+                            
+                            <ul className='navbar-nav ml-auto'>
+                                  <div className='panel-icon' ref={ref => this.el = ref}>
                                         <i className='fas fa-shopping-basket' onClick={() => this.setState({ isPaneOpen: true })}></i>{itemNumber}
                                         <SlidingPane
                                             className='some-custom-class'
@@ -83,11 +83,12 @@ class Header extends Component {
                                             </div>       
                                         </SlidingPane>
                                     </div>
-                                    <button onClick={this.props.signout} className=" btn btn-outline-orange btn-sm "          
-                                    type="submit">Logout
-                                    </button>
+                                    <Link to='/products' id="shop-2">Shop</Link>
+                                    <Link to='/peep-profile' id="profile">My profile</Link> 
+                                    <a id='logout' onClick={this.props.signout}>Logout</a>
                                  
-                                </ul>
+                            </ul>
+
                             :  <ul className='navbar-nav ml-auto'>
                                         <Link to='/farmers' id="sales"><p>Sales</p></Link> 
                                         <Link to='/farmer-profile' id='farmer-profile'><p>My profile</p></Link> 
