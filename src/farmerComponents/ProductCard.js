@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class ProductCard extends Component {
 
     render() {
-        const {url_img, name, price, quantity} = this.props.product
-        console.log(this.props.product)
-        
+        const {url_img, name, price, quantity} = this.props.product        
         return (
 
             <div id='productCard' className="card">
@@ -15,7 +13,7 @@ class ProductCard extends Component {
             </div>
 
             <div className="card-body ">
-                {/* <h5 className="grey-text pb-2 pt-1"> {category.name}</h5> */}
+                {/* <h5 className="grey-text pb-2 pt-1"> {category}</h5> */}
                 <h4  className="font-weight-bold card-title">{name}</h4>
                 <p className="card-text">£{price}</p>
                 <p className="card-text">{quantity}</p>

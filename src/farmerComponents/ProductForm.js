@@ -102,7 +102,6 @@ class ProductForm extends Component {
                     <button className="btn btn-outline-orange btn-lg" onClick={this.handleSubmit}  type="submit">Add my product!</button>
                 </form>
                 <div id='preview-container'>
-                    <h3 id='preview-title'><b>Preview</b></h3>
                     <div id='productCard' className="card">
                         <br></br>
                         <div className="card view view-cascade overlay">

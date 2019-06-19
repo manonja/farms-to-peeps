@@ -24,7 +24,7 @@ class Header extends Component {
         const isCustomer = this.props.current_user && this.props.user_type === 'customer'
         
         return ( 
-            <nav className="naigation_bar">
+            <nav className="naigation_bar sticky-top">
          
             <Link to='/' className="navbar-logo">Farms To Peeps</Link>
             {   
@@ -76,14 +76,14 @@ class Header extends Component {
                                         </SlidingPane>
                                     </div>
                                     <Link to='/products' id="shop-2">Shop</Link>
-                                    <Link to='/peep-profile' id="profile">My profile</Link> 
+                                    <Link to='/peep-profile' id="profile">Profile</Link> 
                                     <a id='logout' onClick={this.props.signout}>Logout</a>
                                  
                             </ul>
 
                             :  <ul id='navbar-farmer'>
                                     <Link to='/farmers' id="sales">Sales</Link> 
-                                    <Link to='/farmer-profile' id='farmer-profile'>My profile</Link> 
+                                    <Link to='/farmer-profile' id='farmer-profile'>Profile</Link> 
                                     <a id='logout' onClick={this.props.signout}>Logout</a>
      
                                 </ul>
