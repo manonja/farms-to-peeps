@@ -6,7 +6,7 @@ class CategoriesBar extends Component {
         const categories = this.props.productCategories
     
         return ( 
-            <nav id='product-category-navbar' className="navbar navbar-dark navbar-dark  deep-orange  scrolling-navbar ">
+            <nav id='product-category-navbar' className="navbar navbar-dark navbar-dark  deep-orange ">
                 <a  
                     href='#allProduces'
                     key='all produces'

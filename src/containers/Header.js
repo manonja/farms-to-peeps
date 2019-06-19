@@ -24,25 +24,17 @@ class Header extends Component {
         const isCustomer = this.props.current_user && this.props.user_type === 'customer'
         
         return ( 
-            <nav className="navbar navbar-expand-lg sticky-top scrolling-navbar ">
+            <nav class="naigation_bar">
          
-            <Link to='/'> <p className="navbar-brand">Farms To Peeps</p> </Link>
-
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-    
-            <div className="collapse navbar-collapse" id="navbar-header">
-               
-                 
-                {   
-                    this.props.current_user  && <div id='welcome-user' className='navbar-nav mx-auto'>Welcome, {this.props.current_user.first_name}! </div>  
-                }
+            <Link to='/' className="navbar-logo">Farms To Peeps</Link>
+            {   
+                this.props.current_user  && <p id='welcome-user'>Welcome, {this.props.current_user.first_name}! </p>  
+            }
+            <div id='nav-content'>        
                      
                     { noUserLoggedIn 
                         ? 
-                                <ul className="navbar-nav ml-auto">
+                                <ul id='navbar-general'>
                                     <Link to='/' id="about">About</Link>
                                     <Link to='/products' id='shop'> Shop</Link>
                                     <Link to='/signup' id='register'>Register  </Link>
@@ -53,7 +45,7 @@ class Header extends Component {
                             isCustomer 
                             ?   
                             
-                            <ul className='navbar-nav ml-auto'>
+                            <ul id='navbar-customer'>
                                   <div className='panel-icon' ref={ref => this.el = ref}>
                                         <i className='fas fa-shopping-basket' onClick={() => this.setState({ isPaneOpen: true })}></i>{itemNumber}
                                         <SlidingPane
@@ -89,12 +81,11 @@ class Header extends Component {
                                  
                             </ul>
 
-                            :  <ul className='navbar-nav ml-auto'>
-                                        <Link to='/farmers' id="sales"><p>Sales</p></Link> 
-                                        <Link to='/farmer-profile' id='farmer-profile'><p>My profile</p></Link> 
-                                    <button onClick={this.props.signout} className="btn btn-outline-orange btn-sm my-6 my-sm-2 ml-3"          
-                                    type="submit">Logout
-                                    </button>        
+                            :  <ul id='navbar-farmer'>
+                                    <Link to='/farmers' id="sales">Sales</Link> 
+                                    <Link to='/farmer-profile' id='farmer-profile'>My profile</Link> 
+                                    <a id='logout' onClick={this.props.signout}>Logout</a>
+     
                                 </ul>
                         )
      
