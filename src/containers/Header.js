@@ -24,7 +24,7 @@ class Header extends Component {
         const isCustomer = this.props.current_user && this.props.user_type === 'customer'
         
         return ( 
-            <nav className="naigation_bar">
+            <nav className="naigation_bar sticky-top">
          
             <Link to='/' className="navbar-logo">Farms To Peeps</Link>
             {   

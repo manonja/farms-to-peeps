@@ -14,16 +14,13 @@ class ProductCard extends Component {
             basket_id
         }
 
-        if (current_user) {
-            if (itemAlreadyInBasket){
+        if (itemAlreadyInBasket){
                 alert('You already have this item in your basket!')
         } else {
             API.addToCustomerBasket(productForApi)
             addToBasket(product);   
         }    
-        } else {
-            alert('Register or signin!')
-        }
+      
         
         
     }
