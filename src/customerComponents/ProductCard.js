@@ -1,23 +1,31 @@
 import React, {Component} from 'react';
 import API from '../data/API'
 
+import {Link} from 'react-router-dom'
+
 class ProductCard extends Component {
 
     handleSubmit = (id, product) => {
-        const {basket_id, customerBasket, addToBasket} = this.props
+        const {basket_id, customerBasket, addToBasket, current_user} = this.props
         const itemAlreadyInBasket = customerBasket.some(el => el.id === id);
 
         let productForApi = {
             product_id: id,
             basket_id
         }
-        
-        if (itemAlreadyInBasket){
+
+        if (current_user) {
+            if (itemAlreadyInBasket){
                 alert('You already have this item in your basket!')
         } else {
-        API.addToCustomerBasket(productForApi)
-        addToBasket(product);   
+            API.addToCustomerBasket(productForApi)
+            addToBasket(product);   
         }    
+        } else {
+            alert('Register or signin!')
+        }
+        
+        
     }
 
 

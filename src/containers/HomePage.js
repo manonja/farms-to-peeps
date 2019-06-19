@@ -11,10 +11,10 @@ class HomePage extends Component {
                     <div className="container d-flex align-items-center justify-content-center h-100">
                         <div className="row d-flex justify-content-center text-center">
                             <div className="col-md-10">
-                                <h2 className="display-4 font-weight-bold white-text pt-5 mb-2">Farms To Peeps</h2>
+                                <h2 className="display-2 font-weight-bold white-text pt-5 mb-2">Farms To Peeps</h2>
                                 <hr className="hr-light"/>
-                                <h4 className="white-text my-4">Get fresh produces from dedicated farmers</h4>
-                                <Link to='/signin'><button  id='farmer-btn' type="button" className="btn btn-outline-white">GET STARTED</button></Link>
+                                <h3 className="white-text my-4">Connecting farmers with people.</h3>
+                                <Link to='/signin'><button  id='farmer-btn' type="button" className="btn btn-lg btn-outline-white">GET STARTED</button></Link>
                             </div>
                         </div>
                     </div>
@@ -48,14 +48,16 @@ class HomePage extends Component {
                         </div>
                     </section>
                     <hr className="my-5"/>
-                    <section id="examples" className='text-center'>
+                    <section className='text-center'>
+                        <h1><b>Shop the goods!</b></h1>
+                        <br></br>
                     <div className="row">
                         <div className="col-lg-4 col-md-12 mb-4">
                         <div className="view overlay z-depth-1-half">
                             <img src="https://images.unsplash.com/photo-1529007328922-d323f83de273?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" className="img-fluid" alt='example'/>
-                            <a href="#!">
+                            <Link to='/products'>
                             <div className="mask rgba-white-slight"></div>
-                            </a>
+                            </Link>
                         </div>
                         <h4 className="my-4 font-weight-bold">Local Farms</h4>
                         <p className="grey-text"></p>
@@ -63,9 +65,9 @@ class HomePage extends Component {
                         <div className="col-lg-4 col-md-6 mb-4">
                         <div className="view overlay z-depth-1-half">
                             <img src="https://images.unsplash.com/photo-1463490093487-b0ffe9b8e140?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" className="img-fluid" alt='example2'/>
-                                <a href="#!">
+                                <Link to ='/products'>
                                 <div className="mask rgba-white-slight"></div>
-                                </a>
+                                </Link>
                             </div>
                             <h4 className="my-4 font-weight-bold">Sustainable</h4>
                             <p className="grey-text"></p>
@@ -73,9 +75,9 @@ class HomePage extends Component {
                         <div className="col-lg-4 col-md-6 mb-4">
                             <div className="view overlay z-depth-1-half">
                                 <img src="https://images.unsplash.com/photo-1501620123930-c0eeb6d954a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" className="img-fluid" alt='example2'/>
-                                <a href="#!">
+                                <Link to='/products'>
                                 <div className="mask rgba-white-slight"></div>
-                                </a>
+                                </Link>
                             </div>
                             <h4 className="my-4 font-weight-bold">Home deliveries</h4>
                             <p className="grey-text"></p>
@@ -94,39 +96,20 @@ class HomePage extends Component {
                             <li data-target="#carousel-example-1z" data-slide-to="1"></li>
                             <li data-target="#carousel-example-1z" data-slide-to="2"></li>
                         </ol>
-                        <div className="carousel-inner" role="listbox">
+                        <div className="carousel-inner">
                             <div className="carousel-item active">
                             <img className="d-block w-100" src="https://images.unsplash.com/photo-1469365897239-504fabc9b11b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80" alt="First slide"/>
                             </div>
-                            <div className="carousel-item">
-                            <img className="d-block w-100" src="https://images.unsplash.com/photo-1501620123930-c0eeb6d954a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Second slide"/>
-                            </div>
-                            <div className="carousel-item">
-                            <img className="d-block w-100" src="https://images.unsplash.com/photo-1529007328922-d323f83de273?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Third slide"/>
-                            </div>
                         </div>
-                        <a className="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Previous</span>
-                        </a>
-                        <a className="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Next</span>
-                        </a>
                         </div>
                         </div>
 
                         <div className="col-md-6">
-                            <a href="#!" className="teal-text">
-                                <h6 className="pb-1"><i className="fas fa-heart"></i><strong> Peep </strong></h6>
-                            </a>
-                            <h4 className="mb-3"><strong>It finally becomes easy to eat local!</strong></h4>
-                            <p>Before using farms to peeps, I wasn't able to get fresh local produces from farmers market.</p>
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                                placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
-                                debitis aut rerum.</p>
+                                <h6 className="pb-1"><i className="fas fa-heart"></i><strong> Farmer </strong></h6>
+                            <h4 className="mb-3"><strong>So convenient!</strong></h4>
+                            <p>Before using Farms to peeps, I wasn't able to reach as many people as I would like to.</p>
+                            <p>Farms to Peeps allows me to easily sell my products online, and I am proud to be part of such a community!</p>
                             <p>by <strong>Diogo Costa</strong>, 26/08/2016</p>
-
                         </div>
                     </div>
 

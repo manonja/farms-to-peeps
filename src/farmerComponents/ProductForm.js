@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import API from '../data/API'
 
+
 class ProductForm extends Component {
     state = {
         name: '',
@@ -39,6 +40,7 @@ class ProductForm extends Component {
     }
 
     render() {
+        const {name, price, quantity, url_img, farm, category} = this.state
         return (  
             // <!-- Default form login -->
             <div id='product-form-container'>
@@ -47,7 +49,7 @@ class ProductForm extends Component {
                     <input 
                         name='name' 
                         onChange={this.handleChange} 
-                        value={this.state.name} 
+                        value={name} 
                         className="form-control mb-4" 
                         placeholder="What product would you like to add?" 
                     />
@@ -55,21 +57,21 @@ class ProductForm extends Component {
                     <input 
                         name='price' 
                         onChange={this.handleChange} 
-                        value={this.state.price} 
+                        value={price} 
                         className="form-control mb-4" 
                         placeholder="£" 
                     />
                     <input 
                         name='quantity' 
                         onChange={this.handleChange} 
-                        value={this.state.quantity} 
+                        value={quantity} 
                         className="form-control mb-4" 
                         placeholder="500g? 4 pieces? 1 bunch?" 
                     />
                     <input 
                         name='url_img' 
                         onChange={this.handleChange} 
-                        value={this.state.url_img} 
+                        value={url_img} 
                         className="form-control mb-4" 
                         placeholder="paste your image url here!" 
                     />
@@ -77,20 +79,42 @@ class ProductForm extends Component {
                     <input 
                         name='farm' 
                         onChange={this.handleChange} 
-                        value={this.state.farm} 
+                        value={farm} 
                         className="form-control mb-4" 
                         placeholder="farm" 
                     />
 
                     <div>
-                    <select className="form-control mb-4" id='select-product-category' onChange={this.handleCategory} value={this.state.value} >
-                        <option disabled selected value> -- Select a category -- </option>
-                        <option value="Vegetable">Vegetable</option>
-                        <option value="Fruit">Fruit</option>
-                        <option value="Bakery">Bakery</option>
+                        <select className="form-control mb-4" id='select-product-category' onChange={this.handleCategory} value={this.state.value} >
+                            <option disabled selected value> -- Select a category -- </option>
+                            <option value="Vegetable">Vegetable</option>
+                            <option value="Fruit">Fruit</option>
+                            <option value="Bakery">Bakery</option>
+                            <option value="Meat">Meat</option>
+                            <option value="Fish">Fish</option>
+                            <option value="Pantry">Pantry</option>
+                        </select>
+                    </div>
+                    <br></br>
+                    <h3><b>Preview</b></h3>
+                    <div id='productCard' className="card">
+                        <br></br>
+                        <div className="card view view-cascade overlay">
+                        <img className="card-img-top" src={url_img} alt={name}/>
 
-                    </select>
                         </div>
+
+                        <div className="card-body ">
+                            <h5 className="grey-text pb-2 pt-1"> {category}</h5>
+                            <h4  className="font-weight-bold card-title">{name}</h4>
+                            <p className="card-text">£{price}</p>
+                            <p className="card-text">{quantity}</p>
+                            <p className="card-text">Chalk Farm</p>
+                        </div>
+                    </div>
+
+
+                    <br></br>
                        
                     <button className="btn btn-block btn-outline-orange btn-lg" onClick={this.handleSubmit}  type="submit">Add my product!</button>
     
