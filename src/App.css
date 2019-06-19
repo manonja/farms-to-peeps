@@ -206,7 +206,7 @@ a#logout {
 
 .sale-content {
   margin-top: 0;
-  padding-top: 15%;
+  padding-top: 10%;
   padding-left: 3%; 
   padding-bottom: 100%;
   text-align: center;
@@ -270,8 +270,12 @@ a#product-category {
   align-items: flex-start;
   justify-content: space-around;
   padding-right: 4%;
-  padding-left: 4%;
-    
+  padding-left: 4%;  
+}
+
+#preview-title {
+  color: grey !important;
+  text-align: center;
 }
 
 #signin-form-container {
@@ -309,25 +313,41 @@ a#product-category {
   margin-left: 25% !important;
 }
 
+#panel-content {
+  height: 100%;
+}
+
 #product-form-container {
   background: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1231&q=80')no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-top: 5%;
-  padding-left: 5%;
   text-align: center;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#product-form {
-  width: 40%;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 20%;
-  margin: 0 auto;
-  color:white;
+#product-form-and-preview {
+  display: flex;
+  justify-content: center;
 }
+
+
+#product-form {
+  width: 30%;
+  color:white;
+  margin-left: 15%;
+  margin-right: 5%;
+
+}
+#preview-container {
+  width: 20%;
+  /* margin-left: 5% */
+}
+
 
 #select-user-type {
   height: 55px;
@@ -335,7 +355,6 @@ a#product-category {
   margin: 0 auto;
   text-align-last:center;
 }
-
 
 #LoginFormEmail{
   border-radius: 50px;
@@ -351,6 +370,8 @@ a#product-category {
 
 .product-form-panel {
   background-color: #61dafb;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7)
 
 }
 

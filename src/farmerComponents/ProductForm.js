@@ -9,7 +9,7 @@ class ProductForm extends Component {
         quantity: '',
         url_img: '',
         category: '', 
-        farm: 'Chalk Farm'    
+        farm: ''    
     }
 
     handleCategory= e => {
@@ -42,10 +42,12 @@ class ProductForm extends Component {
     render() {
         const {name, price, quantity, url_img, farm, category} = this.state
         return (  
-            // <!-- Default form login -->
             <div id='product-form-container'>
-                    <h2 className="h4 mb-4">Enter a new product below</h2>
-                  <form id='product-form' className="text-center">
+                    <h2>Enter a new product below</h2>
+                    <br></br>
+                    <br></br>
+                    <div id='product-form-and-preview'>
+                    <form id='product-form' className="text-center">
                     <input 
                         name='name' 
                         onChange={this.handleChange} 
@@ -73,7 +75,7 @@ class ProductForm extends Component {
                         onChange={this.handleChange} 
                         value={url_img} 
                         className="form-control mb-4" 
-                        placeholder="paste your image url here!" 
+                        placeholder="Paste your image url here" 
                     />
 
                     <input 
@@ -96,12 +98,15 @@ class ProductForm extends Component {
                         </select>
                     </div>
                     <br></br>
-                    <h3><b>Preview</b></h3>
+                       
+                    <button className="btn btn-outline-orange btn-lg" onClick={this.handleSubmit}  type="submit">Add my product!</button>
+                </form>
+                <div id='preview-container'>
+                    <h3 id='preview-title'><b>Preview</b></h3>
                     <div id='productCard' className="card">
                         <br></br>
                         <div className="card view view-cascade overlay">
                         <img className="card-img-top" src={url_img} alt={name}/>
-
                         </div>
 
                         <div className="card-body ">
@@ -109,17 +114,12 @@ class ProductForm extends Component {
                             <h4  className="font-weight-bold card-title">{name}</h4>
                             <p className="card-text">£{price}</p>
                             <p className="card-text">{quantity}</p>
-                            <p className="card-text">Chalk Farm</p>
+                            <p className="card-text">{farm}</p>
                         </div>
                     </div>
-
-
-                    <br></br>
-                       
-                    <button className="btn btn-block btn-outline-orange btn-lg" onClick={this.handleSubmit}  type="submit">Add my product!</button>
-    
-                </form>
-            </div>
+                </div>
+            </div>          
+        </div>
           
         );
     }
