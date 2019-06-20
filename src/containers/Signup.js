@@ -24,7 +24,7 @@ class Signup extends Component {
                     alert('not working!')
                 }
                 else {
-                    // user is authentificated!
+                    // user is authentificated
                     this.props.signup(this.state.email, this.state.user_type) 
                     this.props.history.push('/signin')
                 }
@@ -39,7 +39,6 @@ class Signup extends Component {
     handleUserType = e => {
         e.preventDefault()
         this.setState({user_type: e.target.value}) 
-        // I send this to the backend       
     }
 
     render() {
@@ -53,7 +52,7 @@ class Signup extends Component {
                     <fieldset>
                         <div>
                             <select className="form-control mb-4" id='select-user-type' onChange={this.handleUserType} value={this.state.value} >
-                                <option disabled selected value> -- Select an option -- </option>
+                                <option value=''> -- Select an option -- </option>
                                 <option value="farmer">I am a farmer</option>
                                 <option value="customer">I am a peep</option>
                             </select>

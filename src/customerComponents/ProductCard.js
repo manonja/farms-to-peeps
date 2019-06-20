@@ -20,6 +20,7 @@ class ProductCard extends Component {
             addToBasket(product);   
         }       
         } else {
+            alert('You need to register first!')
             this.props.history.push('/signup')
         }    
     }
