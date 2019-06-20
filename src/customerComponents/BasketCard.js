@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
+
 
 class BasketCard extends Component {
 
@@ -9,11 +10,10 @@ class BasketCard extends Component {
 
         return (
 
-            <div id='basket-products' >
-                <p className="font-weight-bold">{name} - <span>£{price}</span>
-                <button className= ' delete-from-checkout btn btn-sm' onClick={() => this.props.deleteProduct(id, basket_id)}><i>Delete</i></button></p>
-
-            </div>
+            <Fragment >
+                <p id='basket-products'className="font-weight-bold">{name} - <span>£{price}</span><button className= ' delete-from-checkout btn btn-sm' onClick={() => this.props.deleteProduct(id, basket_id)}><i>Delete</i></button></p>
+                {/* <div id='delete-from-checkout'></div> */}
+            </Fragment>
         )
     }
 }

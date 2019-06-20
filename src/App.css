@@ -54,6 +54,14 @@ hr {
 
 }
 
+.delete-from-checkout:focus {
+  /* text-align: right;
+  position: relative;
+  top: 0rem; */
+ outline: none; 
+
+}
+
 #panel-title {
   text-align: center;
   padding-top: 15%;
