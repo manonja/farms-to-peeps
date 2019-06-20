@@ -12,12 +12,16 @@ class ProductCard extends Component {
             basket_id
         }
 
-        if (itemAlreadyInBasket){
+        if (current_user) {
+            if (itemAlreadyInBasket){
                 alert('You already have this item in your basket!')
         } else {
             API.addToCustomerBasket(productForApi)
             addToBasket(product);   
         }       
+        } else {
+            this.props.history.push('/signup')
+        }    
     }
 
 
@@ -34,7 +38,12 @@ class ProductCard extends Component {
                     <p className="card-text">£{price} - <span>{quantity}</span></p>
                     <p className="card-text">Chalk Farm</p>
                 </div>
-                <div className="card-footer text-muted text-center"><button onClick={() => this.handleSubmit(id, this.props.product)} id='add-basket-btn' className="btn btn-outline-orange lighten-1">ADD TO BASKET</button>
+                <div className="card-footer text-muted text-center">
+                    <button
+                    onClick={() => this.handleSubmit(id, this.props.product)}
+                    id='add-basket-btn'
+                    className="btn btn-outline-orange lighten-1">ADD TO BASKET
+                    </button>
                 </div>
             </div>
         )

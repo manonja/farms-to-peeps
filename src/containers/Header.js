@@ -60,7 +60,7 @@ class Header extends Component {
                                             <div id='panel-title'>
                                                 <h5>My basket</h5>
                                             </div>
-                                            <div id='panel-content'>
+                                            <div id='panel-content-basket'>
                                                 <br />
                                                 { !this.props.customerBasket 
                                                     ? `Your basket is currently empty`

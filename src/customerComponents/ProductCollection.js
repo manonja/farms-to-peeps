@@ -18,6 +18,7 @@ class ProductCollection extends Component  {
                         addToBasket={this.props.addToBasket}
                         basket_id={this.props.basket_id}
                         customerBasket={this.props.customerBasket}
+                        history={this.props.history}
 
                     />
                 ))
@@ -30,6 +31,7 @@ class ProductCollection extends Component  {
                             addToBasket={this.props.addToBasket}
                             basket_id={this.props.basket_id}
                             customerBasket={this.props.customerBasket}
+                            history={this.props.history}
 
                         />
                     ))
