@@ -6,7 +6,6 @@ class ProductCollection extends Component  {
 
     render() {
         const {allProducts, filterCategory, filterProducts} = this.props
-        console.log(allProducts)
 
         const product = 
             filterCategory === ''
@@ -18,6 +17,8 @@ class ProductCollection extends Component  {
                         addToBasket={this.props.addToBasket}
                         basket_id={this.props.basket_id}
                         customerBasket={this.props.customerBasket}
+                        history={this.props.history}
+                        current_user={this.props.current_user}
 
                     />
                 ))
@@ -30,6 +31,9 @@ class ProductCollection extends Component  {
                             addToBasket={this.props.addToBasket}
                             basket_id={this.props.basket_id}
                             customerBasket={this.props.customerBasket}
+                            history={this.props.history}
+                            current_user={this.props.current_user}
+
 
                         />
                     ))

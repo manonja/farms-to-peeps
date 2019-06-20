@@ -88,7 +88,7 @@ class ProductForm extends Component {
 
                     <div>
                         <select className="form-control mb-4" id='select-product-category' onChange={this.handleCategory} value={this.state.value} >
-                            <option disabled selected value> -- Select a category -- </option>
+                            <option value=''> -- Select a category -- </option>
                             <option value="Vegetable">Vegetable</option>
                             <option value="Fruit">Fruit</option>
                             <option value="Bakery">Bakery</option>

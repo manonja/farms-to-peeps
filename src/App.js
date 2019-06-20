@@ -118,7 +118,6 @@ class App extends Component {
         } else {
           API.createCustomerBasket(customer)
             .then(basket => this.setState({basket_id: basket.id}))
-
         }
       })
   }

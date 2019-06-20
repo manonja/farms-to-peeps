@@ -16,6 +16,7 @@ class CustomerContainer extends Component {
                 />
                 <h3 id='customer-title' className="d-flex justify-content-center">Shop the goods! </h3>
                 <ProductCollection 
+                    history={this.props.history}
                     current_user={this.props.current_user}
                     allProducts={this.props.allProducts}
                     addToBasket={this.props.addToBasket}
