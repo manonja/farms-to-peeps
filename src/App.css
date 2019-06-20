@@ -49,8 +49,15 @@ hr {
 
 }
 
+#basket-products {
+  text-align: left;
+
+}
+
 #panel-title {
   text-align: center;
+  padding-top: 15%;
+  text-decoration: underline;
 }
 
 
@@ -179,7 +186,7 @@ a#logout {
   width: 100px;
 } */
 #products-container {
-  background-color: #686060;
+  background-color: #f5ecec;
 }
 
 #productCard {
@@ -309,7 +316,7 @@ a#product-category {
 
 #signin-form {
   width: 80%;
-  padding-top: 20%;
+  padding-top: 15%;
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 20%;

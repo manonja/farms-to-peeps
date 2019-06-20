@@ -10,9 +10,9 @@ class BasketCard extends Component {
         return (
 
             <div id='basket-products' >
-                <p className="font-weight-bold">{name}</p>
-                <p className="right">£{price}</p>
-                <p id='delete-from-checkout' onClick={() => this.props.deleteProduct(id, basket_id)}><i>Delete</i></p>
+                <p className="font-weight-bold">{name} - <span>£{price}</span>
+                <button className= ' delete-from-checkout btn btn-sm' onClick={() => this.props.deleteProduct(id, basket_id)}><i>Delete</i></button></p>
+
             </div>
         )
     }
