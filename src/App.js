@@ -93,6 +93,7 @@ class App extends Component {
   }
 
   removeProduct = (id) => {
+    alert('Are you sure you want to remove the product from sale?')
     API.removeProductFromSale(id)
       .then(this.removeFromSale(id))
   }
