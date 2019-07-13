@@ -10,6 +10,9 @@ You can signin/signup as a farmer or as a customer. Built with RESTful API archi
 ### Motivations
 Build a fullstack app that uses Ruby for the backend with PostgreSQL and React for the frontend.  
 
+### Demo
+[Here!](https://www.youtube.com/watch?v=QzSKVSNKPkY&t=8s) 
+
 ### Technical details
 - Front-end built with **React** and **React Router**.
 - Styling with pure **CSS** and **MDBootstrap**.
